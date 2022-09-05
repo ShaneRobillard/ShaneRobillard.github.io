@@ -32,4 +32,5 @@ ul{
 }
 li{
   display: list-item;
+  margin-left: 25px;
 }
