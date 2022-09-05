@@ -2,16 +2,19 @@ body{
   font-family: verdana;
   color: black;
   background-color: #223843ff;
+  text-align: center;
 }
 h1{
   font-family: Oswald;
   color: black;
   background-color: #223843ff;
+  text-align: center;
 }
 h2{
   font-family: Oswald;
   color: black;
   background-color: #223843ff;
+  text-align: center;
 }
 main figure{
   text-align: center;
