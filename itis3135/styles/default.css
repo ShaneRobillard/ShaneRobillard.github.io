@@ -1,0 +1,32 @@
+body{
+  font-family: verdana;
+  color: black;
+  background-color: #223843ff;
+}
+h1{
+  font-family: Oswald;
+  color: black;
+  background-color: #223843ff;
+}
+h2{
+  font-family: Oswald;
+  color: black;
+  background-color: #223843ff;
+}
+main figure{
+  text-align: center;
+  font-style: italic;
+  font-family: Oswald;
+  color: black;
+  background-color: #223843ff;
+}
+ul{
+  display:block;
+  list-style-type: square;
+  font-family: Oswald;
+  color: black;
+  background-color: #223843ff;
+}
+li{
+  display: list-item;
+}
