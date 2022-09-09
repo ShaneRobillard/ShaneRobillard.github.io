@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang = "en">
+  <head>
+    <meta charset="UTF-8">
+    <title> &#8734; Shane Robillard &#8734; ITIS 3135 Page &#8734;</title>
+    <link rel="stylesheet" href="styles/default.css">
+  </head>
+  <body>
+    <header>
+      <h1>&#8734; Shane Robillard &#8734; ITIS 3135 &#8734;</h1>
+      <nav>
+      <a href="index.html">Home</a>
+      <a href="introduction.html">Introduction</a>
+      <a href="contract.html">Contract</a>
+      <a href="https://webpages.charlotte.edu/srobilla/itis3135/">UNCC Webpage</a>
+      <a href="tables.html">Tables</a>
+      <a href="forms.html">Forms</a>
+      </nav>
+    </header>
+    <main>
+      <h2>&#8734; HTML Forms &#8734;</h2>
+      <h3>Required information for us to contact you!</h3>
+      <form action="#">
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="fname" placeholder="First Name" required><br><br>
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="lname" placeholder="Last Name" required><br><br>
+        <label for="pnumber">Phone Number:</label><br>
+        <input type="tel" id="pnumber" name="pnumber" placeholder="(###)###-####" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+        required><br><br>
+        <label for="eaddress">Email Address:</label><br>
+        <input type="email" id="eaddress" name="eaddress" placeholder="Please enter a valid email address" pattern=".globex\.com" size="40" required><br><br><br>
+        <label for="services">What type of services are you interested in?</label>
+        <select name="services" id="services">
+            <option value="front-end">Front End Programming</option>
+            <option value="back-end">Back End Programming</option>
+            <option value="web">Website Programming</option>
+            <option value="other">Other</option>
+        </select><br><br><br>
+        <label for="yes">Already a customer:</label>
+        <input type="radio" id="yes" name="customer"><br>
+        <label for="no">Not a existing customer:</label>
+        <input type="radio" id="no" name="customer"><br><br><br>
+        <label for="newsletter">Click here to subscribe to our Newsletter: </label>
+        <input type="checkbox" id="newsletter" name="newsletter"><br><br><br>
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset"><br><br>
+      </form>
+    </main>
+    <footer>
+      <a href="https://webpages.charlotte.edu/srobilla/itis3135/">UNCC Webpage</a>
+    &#8734;
+      <a href="https://github.com/ShaneRobillard/ShaneRobillard.github.io">Github Repository</a>
+    &#8734;
+      <a href="https://shanerobillard.github.io/itis3135/">Github Webpage</a>
+    &#8734;
+      <a href="https://www.freecodecamp.org/ShaneRobillard">FreeCodeCamp</a>
+    &#8734;
+      <a href="https://www.codecademy.com/profiles/ShaneRobillard">CodeAcademy</a>
+    &#8734;
+      <a href="https://www.linkedin.com/in/shane-robillard/">Linkedin</a>
+      <br>
+      <p>Designed by Robillard Industries&copy; 2022</p>
+      <p>
+      <a href="https://validator.w3.org/check?uri=referer">
+        <img src="images/button_validation_html5.png" width="88" height="31" alt="Link to HTML validator"></a>
+      <a href="https://jigsaw.w3.org/css-validator/check/referer">
+        <img src="images/button_validation_css.png" width="88" height="31" alt="Link to CSS validator"></a>
+      </p>
+    </footer>
+  </body>
+</html>
