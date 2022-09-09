@@ -26,10 +26,10 @@
         <label for="lname">Last name:</label><br>
         <input type="text" id="lname" name="lname" placeholder="Last Name" required><br><br>
         <label for="pnumber">Phone Number:</label><br>
-        <input type="tel" id="pnumber" name="pnumber" placeholder="(###)###-####" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+        <input type="tel" id="pnumber" name="pnumber" placeholder="###-###-####" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
         required><br><br>
         <label for="eaddress">Email Address:</label><br>
-        <input type="email" id="eaddress" name="eaddress" placeholder="Please enter a valid email address" pattern=".globex\.com" size="40" required><br><br><br>
+        <input type="email" id="eaddress" name="eaddress" placeholder="Please enter a valid email address" pattern="[^ @]*@[^ @]*" size="40" required><br><br><br>
         <label for="services">What type of services are you interested in?</label>
         <select name="services" id="services">
             <option value="front-end">Front End Programming</option>
