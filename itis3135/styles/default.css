@@ -16,6 +16,12 @@ h2{
   background-color: #223843ff;
   text-align: center;
 }
+h3{
+  font-family: Oswald;
+  color: black;
+  background-color: #223843ff;
+  text-align: center;
+}
 main figure{
   text-align: center;
   font-style: italic;
@@ -38,4 +44,17 @@ li{
 main p{
   text-align: left;
   margin-left: 25px;
+}
+ol{
+  display:block;
+  font-family: Oswald;
+  color: black;
+  background-color: #223843ff;
+}
+table{
+  display: table;
+  border-collapse: separate;
+  box-sizing: border-box;
+  text-indent: initial;
+  border-spacing: 2px;
 }

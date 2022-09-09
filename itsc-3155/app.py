@@ -1,7 +1,19 @@
-for n in range(2, 4) :
-   p = 1
-   for i in range(1, 4) :
-      p = p * n
-      print("%2d" % p, end="")
-   print()
-print()
+class BankAccount :
+   def __init__(self, initialBalance) :
+      self._balance = initialBalance
+      self._transactionCount = 0
+      
+   def deposit(self, amount) :
+      self._balance = self._balance + amount
+      
+   def withdraw(self, amount) :
+      self._balance = self._balance - amount
+
+   def getTransactionCount(self) :
+      self._transactionCount =+ 1
+      
+   def getBalance(self) :
+      return self._balance
+      
+   def endStatementPeriod(self) :
+      self._transactionCount = 0
