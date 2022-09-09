@@ -89,9 +89,13 @@ td{
   border-color: inherit;
   border: 1px solid black;
 }
-.button{
+input[type=submit], input[type=reset]{
   background-color: darkblue;
   color: white;
   text-align: center;
   border-radius: 8px;
+}
+a:link, a:visited {
+  color: black;
+  text-decoration-line: underline;
 }
