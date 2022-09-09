@@ -46,7 +46,8 @@ main p{
   margin-left: 25px;
 }
 ol{
-  display:block;
+  display: table;
+  margin: 0 auto;
   font-family: Oswald;
   color: black;
   background-color: #223843ff;
@@ -58,8 +59,9 @@ table{
   box-sizing: border-box;
   text-indent: initial;
   border-spacing: 2px;
-  text-align: center;
+  text-align: left;
   border: 1px solid black;
+  margin: 0 auto;
 }
 thead{
   display: table-header-group;
