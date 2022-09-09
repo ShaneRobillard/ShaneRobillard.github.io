@@ -50,6 +50,7 @@ ol{
   font-family: Oswald;
   color: black;
   background-color: #223843ff;
+  text-align: center;
 }
 table{
   display: table;
@@ -57,4 +58,31 @@ table{
   box-sizing: border-box;
   text-indent: initial;
   border-spacing: 2px;
+  text-align: center;
+  border: 1px solid black;
+}
+thead{
+  display: table-header-group;
+  background-color: grey;
+  font-weight: bold;
+}
+tbody{
+  display: table-row-group;
+  border-color: inherit;
+}
+tr{
+  display: table-row;
+  border-color: inherit;
+  border: 1px solid black;
+}
+tbody tr:nth-child(even){
+  background-color: white;
+}
+tbody tr:nth-child(odd){
+  background-color: lightblue;
+}
+td{
+  display: table-cell;
+  border-color: inherit;
+  border: 1px solid black;
 }
