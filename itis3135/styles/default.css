@@ -72,6 +72,8 @@ thead{
 tbody{
   display: table-row-group;
   border-color: inherit;
+  color: red;
+  font-style: normal;
 }
 tr{
   display: table-row;
