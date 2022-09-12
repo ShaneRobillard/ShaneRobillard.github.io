@@ -68,6 +68,7 @@ thead{
   background-color: darkblue;
   color: lightcoral;
   font-weight: bold;
+  font-style: normal;
 }
 tbody{
   display: table-row-group;
