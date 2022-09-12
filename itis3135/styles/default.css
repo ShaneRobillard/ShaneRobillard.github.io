@@ -1,24 +1,24 @@
 body{
   font-family: verdana;
-  color: black;
+  color: red;
   background-color: #223843ff;
   text-align: center;
 }
 h1{
   font-family: Oswald;
-  color: black;
+  color: red;
   background-color: #223843ff;
   text-align: center;
 }
 h2{
   font-family: Oswald;
-  color: black;
+  color: red;
   background-color: #223843ff;
   text-align: center;
 }
 h3{
   font-family: Oswald;
-  color: black;
+  color: red;
   background-color: #223843ff;
   text-align: center;
 }
@@ -26,14 +26,14 @@ main figure{
   text-align: center;
   font-style: italic;
   font-family: Oswald;
-  color: black;
+  color: lightcoral;
   background-color: #223843ff;
 }
 ul{
   display:block;
   list-style-type: square;
   font-family: Oswald;
-  color: black;
+  color: lightcoral;
   background-color: #223843ff;
 }
 li{
@@ -49,7 +49,7 @@ ol{
   display: table;
   margin: 0 auto;
   font-family: Oswald;
-  color: black;
+  color: lightcoral;
   background-color: #223843ff;
   text-align: center;
 }
@@ -66,7 +66,7 @@ table{
 thead{
   display: table-header-group;
   background-color: darkblue;
-  color: white;
+  color: lightcoral;
   font-weight: bold;
 }
 tbody{
@@ -79,7 +79,7 @@ tr{
   border: 1px solid black;
 }
 tbody tr:nth-child(even){
-  background-color: white;
+  background-color: lightgreen;
 }
 tbody tr:nth-child(odd){
   background-color: lightblue;
@@ -91,11 +91,11 @@ td{
 }
 input[type=submit], input[type=reset]{
   background-color: darkblue;
-  color: white;
+  color: lightblue;
   text-align: center;
   border-radius: 8px;
 }
 a:link, a:visited {
-  color: black;
+  color: red;
   text-decoration-line: underline;
 }
