@@ -1,24 +1,24 @@
 body{
   font-family: verdana;
-  color: red;
+  color: #A5243D;
   background-color: #223843ff;
   text-align: center;
 }
 h1{
   font-family: Oswald;
-  color: red;
+  color: #A5243D;
   background-color: #223843ff;
   text-align: center;
 }
 h2{
   font-family: Oswald;
-  color: red;
+  color: #A5243D;
   background-color: #223843ff;
   text-align: center;
 }
 h3{
   font-family: Oswald;
-  color: red;
+  color: #A5243D;
   background-color: #223843ff;
   text-align: center;
 }
@@ -73,7 +73,7 @@ thead{
 tbody{
   display: table-row-group;
   border-color: inherit;
-  color: red;
+  color: #A5243D;
   font-style: normal;
 }
 tr{
@@ -99,6 +99,10 @@ input[type=submit], input[type=reset]{
   border-radius: 8px;
 }
 a:link, a:visited {
-  color: red;
+  color: #A5243D;
   text-decoration-line: underline;
+}
+nav{
+  background-color: #B49286;
+  padding: 10px 160px;
 }
