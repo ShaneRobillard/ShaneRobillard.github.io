@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang = "en">
+  <head>
+    <meta charset="UTF-8">
+    <title> &#8734; Shane Robillard's Slow Rabbit &#8734; ITIS 3135 Page &#8734; FirstScripts Page &#8734;</title>
+    <link rel="stylesheet" href="styles/default.css"> 
+    <script src="scripts/defaultscripts.js"></script>
+  </head>
+  <body>
+    <header>
+      <div data-include="components/header.html"></div>
+    </header>
+    <main>
+      <h2>&#8734; FirstScripts &#8734;</h2>
+      <h3>Today's Time and Date is: <span id="date"></span></h3>
+      <form>
+        <label>Please enter your name: </label>
+        <input type="text" name="name" id="name" placeholder="Firstname Lastname" required/>
+        <br>
+        <label>Please tell me how you are feeling: </label>
+        <input type="text" name="feeling" id="feeling" placeholder="Confused" required/>
+        <br>
+        <input type="button" value="Submit" onclick="nameAndFeeling()"></input>
+      </form>
+      <br>
+      <h3 id="greeting"></h3>
+      <br>
+      <form>
+        <h4>Server Price Calculations</h4>
+        <label>Number of servers needed: </label>
+        <input type="text" name="servers" id="servers"/>
+        <label>How many months do you need them for: </label>
+        <input type="text" name="months" id="months"/>
+        <input type="button" value="Server costs" onclick="server()"></input><br>
+        <label id="price">This is your server price calculation!</label><br><br>
+        <h4>Product of two numbers</h4>
+        <label>Enter first number: </label>
+        <input type="text" name="first" id="first"/>
+        <label>Enter second number:  </label>
+        <input type="text" name="second" id="second"/>
+        <input type="button" value="Product" onclick="product()"></input><br>
+        <label id="product">This is the product of the two numbers!</label><br><br>
+        <h4></h4>
+      </form>
+    </main>
+    <footer>
+      <div data-include="components/footer.html"></div>
+    </footer>
+    <script src="scripts/HTMLInclude.js"></script>
+    <script src="scripts/validate.js"></script>
+  </body>
+</html>
