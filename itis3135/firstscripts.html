@@ -33,15 +33,33 @@
         <input type="text" name="months" id="months"/>
         <input type="button" value="Server costs" onclick="server()"></input><br>
         <label id="price">This is your server price calculation!</label><br><br>
-        <h4>Product of two numbers</h4>
-        <label>Enter first number: </label>
-        <input type="text" name="first" id="first"/>
-        <label>Enter second number:  </label>
-        <input type="text" name="second" id="second"/>
-        <input type="button" value="Product" onclick="product()"></input><br>
-        <label id="product">This is the product of the two numbers!</label><br><br>
-        <h4></h4>
-      </form>
+        <h4>Server Bandwidth</h4>
+        <label>Bandwith size in gigabytes/sec: </label>
+        <input type="text" name="bandwidthcost" id="bandwidthcost"/>
+        <input type="button" value="Bandwidth costs" onclick="bandwidth()"></input><br>
+        <label id="costs">This is your bandwidth cost!</label><br><br>
+        <h4>Front End Services</h4>
+        <label>Enter number of front-end developers: </label>
+        <input type="text" name="firstfront" id="firstfront"/>
+        <label>Enter number of hours required: </label>
+        <input type="text" name="secondfront" id="secondfront"/>
+        <input type="button" value="Front end services" onclick="frontServices()"></input><br>
+        <label id="frontservices">This is the cost of your requested front end services!</label><br><br>
+        <h4>Back End Services</h4>
+        <label>Enter number of back-end developers: </label>
+        <input type="text" name="firstback" id="firstback"/>
+        <label>Enter number of hours required: </label>
+        <input type="text" name="secondback" id="secondback"/>
+        <input type="button" value="Back end services" onclick="backServices()"></input><br>
+        <label id="backservices">This is the cost of your requested back end services!</label><br><br>
+        <h4>Web Development Services</h4>
+        <label>Enter number of web developers: </label>
+        <input type="text" name="firstweb" id="firstweb"/>
+        <label>Enter number of hours required: </label>
+        <input type="text" name="secondweb" id="secondweb"/>
+        <input type="button" value="Web dev services" onclick="webServices()"></input><br>
+        <label id="webservices">This is the cost of your requested web dev services!</label><br><br>
+    </form>
     </main>
     <footer>
       <div data-include="components/footer.html"></div>
