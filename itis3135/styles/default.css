@@ -100,10 +100,11 @@ input[type=submit], input[type=reset]{
 }
 a:link, a:visited {
   color: #A5243D;
-  text-decoration-line: underline;
+  text-decoration-line: none;
 }
 a:hover{
   color:red;
+  text-decoration-line: underline;
 }
 nav{
   background-color: #B49286;
