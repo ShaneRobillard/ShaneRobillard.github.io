@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang = "en">
+  <head>
+    <meta charset="UTF-8">
+    <title> &#8734; Shane Robillard's Slow Rabbit &#8734; ITIS 3135 Page &#8734; Calculator_Try Page &#8734;</title>
+    <link rel="stylesheet" href="styles/default.css">
+    <link rel="icon" type="image/x-icon" href="images/wolf.png">
+  </head>
+  <body>
+    <div data-include="components/header.html"></div>
+    <main>
+      <h2>&#8734; Calculator_Try &#8734;</h2>
+      <table class="calculator">
+        <tr>
+            <td colspan="3"><input class="display-box" type="text" id="answer"/></td>
+            <td><input type="button" value="AC" onclick="reset()"/></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="7" onclick="number('7')"/></td>
+            <td><input type="button" value="8" onclick="number('8')"/></td>
+            <td><input type="button" value="9" onclick="number('9')"/></td>
+            <td><input type="button" value="+" onclick="number('+')"/></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="4" onclick="number('4')"/></td>
+            <td><input type="button" value="5" onclick="number('5')"/></td>
+            <td><input type="button" value="6" onclick="number('6')"/></td>
+            <td><input type="button" value="-" onclick="number('-')"/></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="1" onclick="number('1')"/></td>
+            <td><input type="button" value="2" onclick="number('2')"/></td>
+            <td><input type="button" value="3" onclick="number('3')"/></td>
+            <td><input type="button" value="*" onclick="number('*')"/></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="." onclick="number('.')"/></td>
+            <td><input type="button" value="0" onclick="number('0')"/></td>
+            <td><input type="button" value="=" onclick="calc()"/></td>
+            <td><input type="button" value="/" onclick="number('/')"/></td>
+        </tr>
+      </table>
+    </main>
+    <div data-include="components/footer.html"></div>
+    <script src="scripts/HTMLInclude.js"></script>
+    <script src="scripts/calculator_try.js"></script>
+  </body>
+</html>

@@ -120,3 +120,7 @@ nav{
 section p{
   text-align: center;
 }
+.calculator{
+  text-align: center;
+  margin: 50px auto;
+}
