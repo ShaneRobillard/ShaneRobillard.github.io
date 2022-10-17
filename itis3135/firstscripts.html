@@ -14,12 +14,12 @@
       <h3>Today's Time and Date is: <span id="date"></span></h3>
       <form>
         <label>Please enter your name: </label>
-        <input type="text" name="name" id="name" placeholder="Firstname Lastname" required/>
+        <input type="text" name="name" id="name" placeholder="Firstname Lastname" required>
         <br>
         <label>Please tell me how you are feeling: </label>
-        <input type="text" name="feeling" id="feeling" placeholder="Confused" required/>
+        <input type="text" name="feeling" id="feeling" placeholder="Confused" required>
         <br>
-        <input type="button" value="Submit" onclick="nameAndFeeling()"/>
+        <input type="button" value="Submit" onclick="promptUser()"/>
       </form>
       <br>
       <h3 id="greeting">Hello! How are you?</h3>
@@ -27,36 +27,36 @@
       <form>
         <h4>Server Price Calculations</h4>
         <label>Number of servers needed: </label>
-        <input type="text" name="servers" id="servers"/>
+        <input type="text" name="servers" id="servers">
         <label>How many months do you need them for: </label>
-        <input type="text" name="months" id="months"/>
-        <input type="button" value="Server costs" onclick="server()"/><br>
+        <input type="text" name="months" id="months">
+        <input type="button" value="Server costs" onclick="server()"><br>
         <label id="price">This is your server price calculation!</label><br><br>
         <h4>Server Bandwidth</h4>
         <label>Bandwith size in gigabytes/sec: </label>
-        <input type="text" name="bandwidthcost" id="bandwidthcost"/>
-        <input type="button" value="Bandwidth costs" onclick="bandwidth()"/><br>
+        <input type="text" name="bandwidthcost" id="bandwidthcost">
+        <input type="button" value="Bandwidth costs" onclick="bandwidth()"><br>
         <label id="costs">This is your bandwidth cost!</label><br><br>
         <h4>Front End Services</h4>
         <label>Enter number of front-end developers: </label>
-        <input type="text" name="firstfront" id="firstfront"/>
+        <input type="text" name="firstfront" id="firstfront">
         <label>Enter number of hours required: </label>
-        <input type="text" name="secondfront" id="secondfront"/>
+        <input type="text" name="secondfront" id="secondfront">
         <input type="button" value="Front end services" onclick="frontServices()"/><br>
         <label id="frontservices">This is the cost of your requested front end services!</label><br><br>
         <h4>Back End Services</h4>
         <label>Enter number of back-end developers: </label>
-        <input type="text" name="firstback" id="firstback"/>
+        <input type="text" name="firstback" id="firstback">
         <label>Enter number of hours required: </label>
-        <input type="text" name="secondback" id="secondback"/>
-        <input type="button" value="Back end services" onclick="backServices()"/><br>
+        <input type="text" name="secondback" id="secondback">
+        <input type="button" value="Back end services" onclick="backServices()"><br>
         <label id="backservices">This is the cost of your requested back end services!</label><br><br>
         <h4>Web Development Services</h4>
         <label>Enter number of web developers: </label>
-        <input type="text" name="firstweb" id="firstweb"/>
+        <input type="text" name="firstweb" id="firstweb">
         <label>Enter number of hours required: </label>
-        <input type="text" name="secondweb" id="secondweb"/>
-        <input type="button" value="Web dev services" onclick="webServices()"/><br>
+        <input type="text" name="secondweb" id="secondweb">
+        <input type="button" value="Web dev services" onclick="webServices()"><br>
         <label id="webservices">This is the cost of your requested web dev services!</label><br><br>
     </form>
     </main>

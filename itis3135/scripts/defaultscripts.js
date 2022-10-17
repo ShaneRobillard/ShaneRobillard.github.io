@@ -1,11 +1,11 @@
-window.onload = function(){    
-   var date = new Date();
+window.onload = function(){  
+    var date = new Date();
     var day = date.toDateString();
     var time = date.toLocaleTimeString();
     document.getElementById("date").innerHTML = time + " " + day;
 }
 
-function nameAndFeeling(){
+function promptUser(){
     var name = document.getElementById("name").value;
     var feeling = document.getElementById("feeling").value;
     document.getElementById("greeting").innerHTML = "Robillard Industries welcomes you, " +name+ "! We are glad you are feeling " +feeling+ "!";
