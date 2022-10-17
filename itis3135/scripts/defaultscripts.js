@@ -1,8 +1,12 @@
-windows.onload=function getTodaysDate(){  
+windows.onload=function(){  
     var date = new Date();
     var day = date.toDateString();
     var time = date.toLocaleTimeString();
     document.getElementById("date").innerHTML = time + " " + day;
+}
+
+function getTodaysDate(){
+
 }
 
 function promptUser(){
