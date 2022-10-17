@@ -1,4 +1,4 @@
-window.onload = function(){  
+windows.onload=function getTodaysDate(){  
     var date = new Date();
     var day = date.toDateString();
     var time = date.toLocaleTimeString();
