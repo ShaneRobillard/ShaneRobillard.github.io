@@ -1,13 +1,11 @@
-windows.onload=function(){  
+window.onload = function () {
     var date = new Date();
     var day = date.toDateString();
     var time = date.toLocaleTimeString();
-    document.getElementById("date").innerHTML = time + " " + day;
+    document.getElementById("date").innerHTML = time + " -- " + day;
 }
 
-function getTodaysDate(){
-
-}
+function getTodaysDate() { }
 
 function promptUser(){
     var name = document.getElementById("name").value;
