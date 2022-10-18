@@ -5,7 +5,7 @@ function promptUser(){
 }
 
 function validateEntry(numbersides){
-    if(isNaN(numbersides) || numbersides > 10 || numbersides < -10){
+    if(isNaN(numbersides) || numbersides > 11 || numbersides < -11){
         alert("This is not a valid entry!");
         promptUser();
     }else{
