@@ -5,7 +5,7 @@ function promptUser(){
 }
 
 function validateEntry(numbersides){
-    if(isNaN(numbersides) || numbersides > 11 || numbersides < -11){
+    if(isNaN(numbersides) || numbersides > 10 || numbersides < -10){
         alert("This is not a valid entry!");
         promptUser();
     }else{
@@ -14,7 +14,7 @@ function validateEntry(numbersides){
 }
 
 function getShape(numbersides){
-    numbersides = Math.abs(Math.round(numbersides));
+    numbersides = Mah.abs(Math.round(numbersides));
     if(numbersides == 0){
         document.getElementById("polygon").innerHTML = "This is not a shape!";
     }else if(numbersides == 1){
