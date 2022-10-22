@@ -125,5 +125,8 @@ section p{
   margin: 50px auto;
 }
 #try{
-text-align: center;
+  text-align: center;
+}
+div p{
+  text-align: center;
 }

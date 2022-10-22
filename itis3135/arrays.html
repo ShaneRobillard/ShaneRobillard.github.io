@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang = "en">
+  <head>
+    <meta charset="UTF-8">
+    <title> &#8734; Shane Robillard's Slow Rabbit &#8734; ITIS 3135 Page &#8734; Home Page &#8734;</title>
+    <link rel="stylesheet" href="styles/default.css">
+    <link rel="icon" type="image/x-icon" href="images/wolf.png">
+  </head>
+  <body>
+    <div data-include="components/header.html"></div>
+    <main>
+      <h2>&#8734; Arrays &#8734;</h2>
+      <label for="employee">Select an Employee: </label>
+      <select name="employee" id="employee">
+        <option value="Margot Alcock">Margot Alcock</option>
+        <option value="Roberto Beltran">Roberto Beltran</option>
+        <option value="Dakota Cole">Dakota Cole</option>
+        <option value="Kylo David">Kylo David</option>
+        <option value="Rianna Hale">Rianna Hale</option>
+        <option value="Shanae Hulme">Shanae Hulme</option>
+        <option value="Rylee McKenzie">Rylee McKenzie</option>
+        <option value="Blanche Portillo">Blanche Portillo</option>
+        <option value="Darla Sheridan">Darla Sheridan</option>
+        <option value="Darien Wells">Darien Wells</option>
+      </select><br><br>
+      <label for="salary">Salary: </label>
+      <input type="number" id="salary" required><br><br>
+      <button onclick="addSalary()">Add Salary</button>
+      <button onclick="displayResults()">Display Results</button>
+      <button onclick="displaySalary()">Display Salary</button><br><br>
+      <div id="results"></div>
+      <table id="results_table"></table><br>
+    </main>
+    <div data-include="components/footer.html"></div>
+    <script src="scripts/HTMLInclude.js"></script>
+    <script src="scripts/arrays.js"></script>
+  </body>
+</html>
