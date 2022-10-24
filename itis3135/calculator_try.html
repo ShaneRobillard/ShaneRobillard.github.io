@@ -10,36 +10,33 @@
     <div data-include="components/header.html"></div>
     <main>
       <h2>&#8734; Calculator_Try &#8734;</h2>
-      <table class="calculator">
-        <tr>
-            <td colspan="3"><input class="display-box" type="text" id="answer"></td>
-            <td><input type="button" value="AC" onclick="reset()"></td>
-        </tr>
-        <tr>
-            <td><input type="button" value="7" onclick="number('7')"></td>
-            <td><input type="button" value="8" onclick="number('8')"></td>
-            <td><input type="button" value="9" onclick="number('9')"></td>
-            <td><input type="button" value="+" onclick="number('+')"></td>
-        </tr>
-        <tr>
-            <td><input type="button" value="4" onclick="number('4')"></td>
-            <td><input type="button" value="5" onclick="number('5')"></td>
-            <td><input type="button" value="6" onclick="number('6')"></td>
-            <td><input type="button" value="-" onclick="number('-')"></td>
-        </tr>
-        <tr>
-            <td><input type="button" value="1" onclick="number('1')"></td>
-            <td><input type="button" value="2" onclick="number('2')"></td>
-            <td><input type="button" value="3" onclick="number('3')"></td>
-            <td><input type="button" value="*" onclick="number('*')"></td>
-        </tr>
-        <tr>
-            <td><input type="button" value="." onclick="number('.')"></td>
-            <td><input type="button" value="0" onclick="number('0')"></td>
-            <td><input type="button" value="=" onclick="calc()"></td>
-            <td><input type="button" value="/" onclick="number('/')"></td>
-        </tr>
-      </table>
+      <div class="container">
+        <div class="calculator">
+          <div class="calculator__display">0</div>
+          <div class="calculator__keys">
+            <button class="key--operator" data-action="add">+</button>
+            <button class="key--operator" data-action="subtract">-</button>
+            <button class="key--operator" data-action="multiply">&times;</button>
+            <button class="key--operator" data-action="divide">÷</button>
+            <button>7</button>
+            <button>8</button>
+            <button>9</button>
+            <button>4</button>
+            <button>5</button>
+            <button>6</button>
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button>0</button>
+            <button data-action="decimal">.</button>
+            <button class="key--firstrow" data-action="negative">+/-</button>
+            <button class="key--firstrow" data-action="percentage">%</button>
+            <button data-action="clear">AC</button>
+            <button class="key--equal" data-action="calculate">=</button>
+          </div>
+        </div>
+      </div>
+    <br> <br> <br> <br> <br> <br>
     </main>
     <div data-include="components/footer.html"></div>
     <script src="scripts/HTMLInclude.js"></script>
