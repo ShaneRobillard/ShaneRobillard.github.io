@@ -5,6 +5,11 @@
     <title> &#8734; Shane Robillard's Slow Rabbit &#8734; ITIS 3135 Page &#8734; Hobby Page &#8734;</title>
     <link rel="icon" type="image/x-icon" href="images/wolf.png">
     <style>
+        body{
+          background-color: steelblue;
+          font-family: Arial, Helvetica, sans-serif;
+          color: darkblue;
+        }
         h1,h2{
             text-align: center;
         }
@@ -23,16 +28,42 @@
         }
         #nav{
             text-align: center;
+            border: 1px solid black;
+            background-color: lightblue;
         }
         ul{
             text-align: left;
-            display: inline-block;
-            list-style-type: square;
-            margin-left: 1000px;
+            list-style-type:disc;
+            display: table;
+            margin: 0 auto;
+        }
+        #nav button{
+          background-color: lightblue;
+          float: center;
+          border: none;
+          outline: none;
+          cursor: pointer;
+          padding: 14px 16px;
         }
     </style>
     <script>
-        
+        function openBook(tab,pageName){
+          let i;
+          let tabs;
+          let bookTab;
+
+          tabs=document.getElementsByClassName("tabs");
+          for(i=0;i<tabs.length;i++){
+            tabs[i].style.display="none";
+          }
+          bookTab=document.getElementsByClassName("bookTab");
+          for(i=0;i<bookTab.length;i++){
+            bookTab[i].className=bookTab[i].className.replace("active","");
+          }
+          document.getElementById(pageName).style.display="block";
+          tab.currentTarget.className += "active";
+          document.getElementById("Home").click();
+        }
     </script>
   </head>
   <body>
@@ -57,7 +88,7 @@
           <p>“The more that you read, the more things you will know. The more that you learn, the more places you'll go.”
             Dr. Seuss</p>
         </section>
-        <section id="About" class="tabs">
+        <section id="About" class="tabs" style="display: none">
           <h2>About Me</h2>
           <p>Hi, I am Shane Robillard. I am currently a senior at UNCC. I working on a bachelor's of science in Cybersecurity. I am a husband and father of three.</p>
           <figure>
@@ -69,7 +100,7 @@
             <figcaption>My kids at a pumpkin patch.</figcaption>
           </figure>
         </section>
-        <section id="Library" class="tabs">
+        <section id="Library" class="tabs" style="display: none">
             <h2>My Library</h2>
             <p>I have a enormouse library of at least 700+ books between my wife and I. We have 10 and soon to be 11 bookcases that are full of books.</p>
             <figure>
@@ -82,7 +113,7 @@
             </figure>
             
         </section>
-        <section id="Favorite" class="tabs">
+        <section id="Favorite" class="tabs" style="display: none">
             <h2>Favorite Books</h2>
             <p>I have alot of favorites, since I love to read it is hard to choose between them.</p>
             <figure>
@@ -95,9 +126,10 @@
                 <li>My favorite topic of books is Science Fiction/Fantasy with a bit of dabbling in military history.</li>
             </ul>
         </section>
-        <section id="Like" class="tabs">
+        <section id="Like" class="tabs" style="display: none">
             <h2>Why I like reading!</h2>
-            <p>I love reading for many reasons. One of which is escapism. Books allow me to escape into worlds unheard of. Another reason is </p>
+            <p>I love reading for many reasons. One of which is escapism. Books allow me to escape into worlds unheard of. It allows me to escape the mundance boredom of everyday life. </p>
+            <p>Another reason I love reading is imagination.  I get to explore the imaginations of many different people, and what they are capable of creating. I get to see through the lenses of another person's mind.</p>
             <figure>
                 <img src="images/why.jpg"><br>
                 <figcaption>Here is a picture of the first book my son made.</figcaption>
@@ -107,11 +139,13 @@
     </main>
     <footer>
       <p>
+      <a href="/robillardindustries.tech/index.html">Designed by Robillard Industries&copy; 2022</a><br><br>
       <a href="https://validator.w3.org/check?uri=referer">
         <img src="images/button_validation_html5.png" width="88" height="31" alt="Link to HTML validator"></a>
       <a href="https://jigsaw.w3.org/css-validator/check/referer">
         <img src="images/button_validation_css.png" width="88" height="31" alt="Link to CSS validator"></a>
       </p>
+      
     </footer>
     <script src="scripts/validate.js"></script>
   </body>
