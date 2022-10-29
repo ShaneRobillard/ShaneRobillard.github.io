@@ -73,6 +73,7 @@
         <button class="bookTab" onclick="openBook(event, 'Home')">Home</button>
         <button class="bookTab" onclick="openBook(event, 'About')">About Me</button>
         <button class="bookTab" onclick="openBook(event, 'Library')">My Library</button>
+        <button class="bookTab" onclick="openBook(event, 'Times')">Best Times</button>
         <button class="bookTab" onclick="openBook(event, 'Favorite')">Favorite Books</button>
         <button class="bookTab" onclick="openBook(event, 'Like')">Why I like reading</button>
       </nav>
@@ -80,13 +81,13 @@
     <main>
         <section id="Home" class="tabs">
           <h2>Home</h2>
-          <p>Welcome to my hobby page. Hopefully I can show you a glimpse into one of my hobbies.</p><br>
+          <p>Welcome to my hobby page. Hopefully I can show you a glimpse into one of my hobbies.</p>
+          <p>Reading is one of 3 three favorite pastimes. I read whenever I can get the chance.</p><br>
           <figure>
             <img src="images/home.jpg"><br>
             <figcaption>This is a picture of the book I am currently reading.</figcaption>
           </figure>
-          <p>“The more that you read, the more things you will know. The more that you learn, the more places you'll go.”
-            Dr. Seuss</p>
+          <p>“The more that you read, the more things you will know. The more that you learn, the more places you'll go.” Dr. Seuss</p>
         </section>
         <section id="About" class="tabs" style="display: none">
           <h2>About Me</h2>
@@ -102,7 +103,7 @@
         </section>
         <section id="Library" class="tabs" style="display: none">
             <h2>My Library</h2>
-            <p>I have a enormouse library of at least 700+ books between my wife and I. We have 10 and soon to be 11 bookcases that are full of books.</p>
+            <p>I have a enormous library of at least 700+ books between my wife and I. We have 10 and soon to be 11 bookcases that are full of books.</p>
             <figure>
                 <img src="images/library.jpg"><br>
                 <figcaption>A glimpse of my large number of books.</figcaption>
@@ -110,9 +111,17 @@
             <figure>
                 <img src="images/another.jpg"><br>
                 <figcaption>Another glimpse of my large number of books.</figcaption>
-            </figure>
-            
+            </figure> 
         </section>
+        <section id="Times" class="tabs" style="display: none">
+          <h2>Best Times</h2>
+          <p>My favorite time to read is at night right before going to sleep. It helps me calm down and relax. This helps me fall asleep. My dreams are usually calmer and more vivid after a good hour of reading.</p>
+          <figure>
+              <img src="images/toread.jpg"><br>
+              <figcaption>My to read pile.</figcaption>
+          </figure>
+          <p>There are plenty of other times to read as well. I like to read at school before class starts. This helps calm myself down and get into the mood of learning.</p>
+      </section>
         <section id="Favorite" class="tabs" style="display: none">
             <h2>Favorite Books</h2>
             <p>I have alot of favorites, since I love to read it is hard to choose between them.</p>
@@ -145,7 +154,6 @@
       <a href="https://jigsaw.w3.org/css-validator/check/referer">
         <img src="images/button_validation_css.png" width="88" height="31" alt="Link to CSS validator"></a>
       </p>
-      
     </footer>
     <script src="scripts/validate.js"></script>
   </body>
