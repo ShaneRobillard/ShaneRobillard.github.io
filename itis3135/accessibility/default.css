@@ -64,7 +64,7 @@ form {
 
 /* footer bottom of page*/
 footer {
-   bottom: 0;
+  bottom: 0;
   right: 0;
   padding-right: 70px;
   text-align: center;
@@ -78,7 +78,6 @@ abbr {
 .whitespace {
   padding: 10px;
   font-size: 30px;
-
 }
 
 .whitespace2 {
