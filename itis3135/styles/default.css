@@ -185,19 +185,19 @@ div p{
   grid-column: -2;
   grid-row: 2 / span 4;
 }
-
-* 
-{
+ 
+*{
   box-sizing: border-box;
 }
 .container {
   position: relative;
 }
-.mySlides {
+.slides{
   display: none;
 }
-.cursor {
+.pointer{
   cursor: pointer;
+  opacity: 0.6;
 }
 .prev{
   cursor: pointer;
@@ -256,9 +256,7 @@ div p{
   float: left;
   width: 16.66%;
 }
-.demo {
-  opacity: 0.6;
-}
+
 .active,
 .demo:hover {
   opacity: 1;
