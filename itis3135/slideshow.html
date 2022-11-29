@@ -5,72 +5,39 @@
     <title> &#8734; Shane Robillard's Slow Rabbit &#8734; ITIS 3135 Page &#8734; Slideshow Page &#8734;</title>
     <link rel="stylesheet" href="styles/default.css">
     <link rel="icon" type="image/x-icon" href="images/wolf.png">
-    <script src="scripts/jquery-3.6.1.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
   </head>
   <body>
     <div data-include="components/header.html"></div>
     <main>
       <h2>&#8734; Slideshow &#8734;</h2>
         <h3>Image Gallery</h3>
-        <div class="row">
-            <div class="column">
-                <img class="demo cursor" src="images/amaryllis.jpg"  style="width:25%" onclick="currentSlide(1)"
-                    alt="Amaryllis">
-            </div>
-            <div class="column">
-                <img class="demo cursor" src="images/closeup.jpg" style="width:25%" onclick="currentSlide(2)"
-                    alt="Close Up">
-            </div>
-            <div class="column">
-                <img class="demo cursor" src="images/flowers.jpg" style="width:25%" onclick="currentSlide(3)"
-                    alt="Flowers">
-            </div>
-            <div class="column">
-                <img class="demo cursor" src="images/herbs.jpg"  style="width:25%" onclick="currentSlide(4)"
-                    alt="Herbs">
-            </div>
-            <div class="column">
-                <img class="demo cursor" src="images/hibiscus.jpg"  style="width:25%" onclick="currentSlide(5)"
-                    alt="Hibiscus">
-            </div>
-            <div class="column">
-                <img class="demo cursor" src="images/hibiscus2.jpg" style="width:25%" onclick="currentSlide(6)"
-                    alt="Hibiscus 2">
-        </div>
-        <div class="slideshow-container">
-            <div class="mySlides fade">
-              <div class="numbertext">1 / 6</div>
-              <img src="images/amaryllis.jpg" style="width: 300px">
-              <div class="text">Amaryllis</div>
-            </div>
-            <div class="mySlides fade">
-              <div class="numbertext">2 / 6</div>
-              <img src="images/closeup.jpg" style="width: 300px;">
-              <div class="text">Close Up</div>
-            </div>
-            <div class="mySlides fade">
-              <div class="numbertext">3 / 6</div>
-              <img src="images/flowers.jpg" style="width: 300px">
-              <div class="text">Flowers</div>
-            </div>
-            <div class="mySlides fade">
-                <div class="numbertext">4 / 6</div>
-                <img src="images/herbs.jpg" style="width: 300px">
-                <div class="text">Herbs</div>
-              </div>
-              <div class="mySlides fade">
-                <div class="numbertext">5 / 6</div>
-                <img src="images/hibiscus.jpg" style="width: 300px">
-                <div class="text">Hibiscus</div>
-              </div>
-              <div class="mySlides fade">
-                <div class="numbertext">6 / 6</div>
-                <img src="images/hibiscus2.jpg" style="width: 300px">
-                <div class="text">Hibiscus 2</div>
-              </div>
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
-          </div>
+        <figure id="amaryllis" class="pictures">
+          <img src="images/amaryllis.jpg" alt="amaryllis"><br>
+          <figcaption>Amaryllis flowers</figcaption>
+        </figure>
+        <figure id="closeup" class="pictures">
+          <img src="images/closeup.jpg" alt="closeup"><br>
+          <figcaption>Close up of flowers</figcaption>
+        </figure>
+        <figure id="flowers" class="pictures">
+          <img src="images/flowers.jpg" alt="flowers"><br>
+          <figcaption>Bunch of flowers</figcaption>
+        </figure>
+        <figure id="herbs" class="pictures">
+          <img src="images/herbs.jpg" alt="herbs"><br>
+          <figcaption>Herbs</figcaption>
+        </figure>
+        <figure id="hibiscus" class="pictures">
+          <img src="images/hibiscus.jpg" alt="hibiscus"><br>
+          <figcaption>Hibiscus flowers</figcaption>
+        </figure>
+        <figure id="hibiscus2" class="pictures">
+          <img src="images/hibiscus2.jpg" alt="hibiscus2"><br>
+          <figcaption>Hibiscus flowers 2</figcaption>
+        </figure>
+        <input type="button" id="prev" value="prev" onclick="prev()">
+        <input type="button" id="next" value="next" onclick="next()">
     </main>
     <div data-include="components/footer.html"></div>
     <script src="scripts/HTMLInclude.js"></script>  
