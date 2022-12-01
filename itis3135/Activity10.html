@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang = "en">
+  <head>
+    <meta charset="UTF-8">
+    <title> &#8734; Shane Robillard's Slow Rabbit &#8734; ITIS 3135 Page &#8734; Image Swap Page &#8734;</title>
+    <link rel="stylesheet" href="styles/Activity10.css">
+    <link rel="icon" type="image/x-icon" href="images/wolf.png">
+  </head>
+  <body>
+    <div data-include="components/header.html"></div>
+    <main>   
+        <br>        
+        <ul class="thumbnail">
+            <li><img src="../itis3135/images/both.jpg" onclick="swap('../itis3135/images/both.jpg', 'both');" alt="both"><br>Both Cats</li>
+            <li><img src="../itis3135/images/cuddles.jpg" onclick="swap('../itis3135/images/cuddles.jpg', 'cuddles');" alt="cuddles"><br>Cuddles</li>
+            <li><img src="../itis3135/images/hiding.jpg" onclick="swap('../itis3135/images/hiding.jpg', 'hiding');" alt="hiding"><br>Hiding in the Closet</li>
+            <li><img src="../itis3135/images/laundry.jpg" onclick="swap('../itis3135/images/laundry.jpg', 'laundry');" alt="laundry"><br>Sleeping in the laundry basket</li>
+            <li><img src="../itis3135/images/sleeping1.jpg" onclick="swap('../itis3135/images/sleeping1.jpg', 'sleeping1');" alt="sleeping1"><br>Sound Asleep</li>
+            <li><img src="../itis3135/images/sleeping2.jpg" onclick="swap('../itis3135/images/sleeping2.jpg', 'sleeping2');" alt="sleeping2"><br>Sound Asleep Again</li>
+        </ul>
+        <br clear="all">
+        <img src="images/both.jpg" id="current">
+        <br><br>
+    </main>
+    <div data-include="components/footer.html"></div>
+    <script src="scripts/HTMLInclude.js"></script>
+    <script src="scripts/Activity10.js"></script>
+  </body>
+</html>
