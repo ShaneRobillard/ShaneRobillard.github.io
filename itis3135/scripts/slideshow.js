@@ -9,12 +9,14 @@ $(document).ready(function () {
 function next(){
   i++;
   if(i==6){
-    //$('#hibiscus2').hide(slideshow[5]);
-    //$('#hibiscus2').show(slideshow[0]);
+    $('#hibiscus2').hide(slideshow[5]);
+    $('#amaryllis').show(slideshow[0]);
     i=0;
   }
   if(i==5){
-    //$('#hibiscus2').show(slideshow[5]);
+    $('#hibiscus2').show();
+  }else{
+    $('hibiscus2').hide();
   }
   $(slideshow[i-1]).hide();
   $(slideshow[i]).show();
