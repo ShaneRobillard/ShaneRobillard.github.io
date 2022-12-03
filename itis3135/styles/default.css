@@ -183,3 +183,29 @@ div p{
   grid-column: -2;
   grid-row: 2 / span 4;
 }
+
+#thumbnail {
+  list-style-type:none;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  display: inline-block;    
+}
+#thumbnail li {
+  float:left;
+  list-style-type:none;
+  text-align: center;
+}
+#thumbnail li img {
+  width: 100px;
+  height: auto;
+  cursor: pointer;
+  margin:auto;
+}
+#current {
+  margin: auto;
+  padding: auto;
+}
+#caption {
+  color: lightcoral;
+}

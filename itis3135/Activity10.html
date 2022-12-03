@@ -5,21 +5,23 @@
     <title> &#8734; Shane Robillard's Slow Rabbit &#8734; ITIS 3135 Page &#8734; Image Swap Page &#8734;</title>
     <link rel="stylesheet" href="styles/Activity10.css">
     <link rel="icon" type="image/x-icon" href="images/wolf.png">
+    <script src="scripts/jquery-3.6.1.js"></script>
   </head>
   <body>
     <div data-include="components/header.html"></div>
     <main>   
         <br>        
-        <ul class="thumbnail">
-            <li><img src="../itis3135/images/both.jpg" onclick="swap('../itis3135/images/both.jpg', 'both');" alt="both"><br>Both Cats</li>
-            <li><img src="../itis3135/images/cuddles.jpg" onclick="swap('../itis3135/images/cuddles.jpg', 'cuddles');" alt="cuddles"><br>Cuddles</li>
-            <li><img src="../itis3135/images/hiding.jpg" onclick="swap('../itis3135/images/hiding.jpg', 'hiding');" alt="hiding"><br>Hiding in the Closet</li>
-            <li><img src="../itis3135/images/laundry.jpg" onclick="swap('../itis3135/images/laundry.jpg', 'laundry');" alt="laundry"><br>Sleeping in the laundry basket</li>
-            <li><img src="../itis3135/images/sleeping1.jpg" onclick="swap('../itis3135/images/sleeping1.jpg', 'sleeping1');" alt="sleeping1"><br>Sound Asleep</li>
-            <li><img src="../itis3135/images/sleeping2.jpg" onclick="swap('../itis3135/images/sleeping2.jpg', 'sleeping2');" alt="sleeping2"><br>Sound Asleep Again</li>
+        <ul id="thumbnail">
+            <li><img src="../itis3135/images/both.jpg" alt="Both Cats" id="both" title="both"><br>Both Cats</li>
+            <li><img src="../itis3135/images/cuddles.jpg" alt="Cuddles" id="cuddles" title="cuddles"><br>Cuddles</li>
+            <li><img src="../itis3135/images/hiding.jpg" alt="Hiding in the Closet" id="hiding" title="hiding"><br>Hiding in the Closet</li>
+            <li><img src="../itis3135/images/laundry.jpg" alt="Sleeping in the Laundry" id="laundry" title="laundry"><br>Hiding in the Laundry</li>
+            <li><img src="../itis3135/images/sleeping1.jpg" alt="Sleeping on the bed" id="sleeping1" title="sleeping1"><br>Sleeping on the Bed</li>
+            <li><img src="../itis3135/images/sleeping2.jpg" alt="Sleeping Again" id="sleeping2" title="sleeping2"><br>Sleeping Again</li>
         </ul>
         <br clear="all">
-        <img src="images/both.jpg" id="current">
+        <img src="images/both.jpg" id="current" alt="both" title="both">
+        <h2 id="caption">Both Cats</h2>
         <br><br>
     </main>
     <div data-include="components/footer.html"></div>
