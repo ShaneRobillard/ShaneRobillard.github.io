@@ -1,4 +1,5 @@
 window.onload = function () {
+  alert();
     const calculate = (n1, operator, n2) => {
         let result = ''
         if (operator === 'add') {
