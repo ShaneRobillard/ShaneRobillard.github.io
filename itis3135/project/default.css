@@ -52,6 +52,7 @@ body{
     width: 1000px;
     margin: auto;
     display: block;
+    object-fit: cover;
   }
   .mapouter{
     margin: auto;
@@ -59,5 +60,4 @@ body{
   #Knots iframe{
     margin: auto;
     display: block;
-
   }
