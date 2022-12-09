@@ -3,7 +3,7 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     color: #BFB7B6;
   }
-  h1,h2{
+  h1,h2,h3{
       text-align: center;
   }
   main img{
@@ -101,5 +101,29 @@ body{
     margin: auto;
   }
   #caption {
+    color: #BFB7B6;
+  }
+  .maps {
+    width: 50%;
+    margin: 0 auto;
+    border: none;
+    box-shadow: none;
+  }
+  .maps h3 {
+    text-align: center;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    background-color: #ABFAA9;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    border: 1px solid black;
+    border-radius: 3px;
+    color: #190E4F; 
+  }
+  .maps h3:hover {
+    cursor: pointer;
+  }
+  .maps div {
+    background-color: #36382E;
     color: #BFB7B6;
   }

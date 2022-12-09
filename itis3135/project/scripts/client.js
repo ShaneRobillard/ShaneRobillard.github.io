@@ -1,3 +1,12 @@
+$(function() {
+  $( ".maps" ).accordion({
+    collapsible: true,
+    active: false,
+    header: "h3",
+    heightStyle: "content",
+  });
+});
+
 $('#saltwatercatfish').on({
     'click': function(){
         $("#current, #caption").fadeOut("slow", function() {
