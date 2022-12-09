@@ -7,6 +7,12 @@ $(function() {
   });
 });
 
+$( function() {
+  $( "#tabs" ).tabs({
+    collapsible: true,
+  });
+});
+
 $('#saltwatercatfish').on({
     'click': function(){
         $("#current, #caption").fadeOut("slow", function() {

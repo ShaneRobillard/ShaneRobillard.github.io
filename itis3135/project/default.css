@@ -108,6 +108,7 @@ body{
     margin: 0 auto;
     border: none;
     box-shadow: none;
+    border-width: 0px;
   }
   .maps h3 {
     text-align: center;
@@ -126,4 +127,65 @@ body{
   .maps div {
     background-color: #36382E;
     color: #BFB7B6;
+  }
+  #tabs {
+    position: relative;
+    padding-left: 6.5em;
+    background: transparent;
+    border: none;
+  }
+  #tabs .ui-widget-header {
+    background: transparent; 
+    border: none;  
+    -moz-border-radius: 0px; 
+    -webkit-border-radius: 0px; 
+    border-radius: 0px; 
+  }
+  #tabs .ui-tabs-nav .ui-state-default { 
+    background: transparent; 
+    border: none; 
+  } 
+  #tabs .ui-tabs-nav .ui-state-active { 
+    background: transparent url(images/uiTabsArrow.png) no-repeat bottom center; 
+    border: none; 
+  } 
+  #tabs .ui-tabs-nav .ui-state-default a { 
+    color: #BFB7B6; 
+  } 
+  #tabs .ui-tabs-nav .ui-state-active a { 
+    color: #ABFAA9; 
+  }
+  #tabs .ui-tabs-nav {
+    position: absolute; 
+    left: 0.25em; 
+    top: 0.25em; 
+    bottom: 0.25em; 
+    width: 6em; 
+    padding: 0.2em 0 0.2em 0.2em;
+  }
+  #tabs .ui-tab-nav li {
+    right: 1px; 
+    width: 100%; 
+    border-right: none; 
+    border-bottom-width: 1px !important; 
+    -moz-border-radius: 4px 0px 0px 4px; 
+    -webkit-border-radius: 4px 0px 0px 4px; 
+    border-radius: 4px 0px 0px 4px; 
+    overflow: hidden; 
+  }
+  #tabs .ui-tabs-nav li.ui-tabs-selected, 
+  #tabs .ui-tabs-nav li.ui-state-active { 
+    border-right: 1px solid transparent; 
+  } 
+  #tabs .ui-tabs-nav li a { 
+    float: right; 
+    width: 100%; 
+    text-align: right; 
+  } 
+  #tabs .ui-tabs-panel { 
+    height: 40em; 
+  }
+  #tabs-1, #tabs-2, #tabs-3, #tabs-4, #tabs-5, #tabs-6 {
+    color: #BFB7B6;
+    text-align: center;
   }
