@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title> &#8734; Shane Robillard's Slow Rabbit &#8734; ITIS 3135 Page &#8734; Surf Fishing Page &#8734;</title>
     <link rel="icon" type="image/x-icon" href="images/wolf.png">
-    <script src="scripts/client.js"></script>
     <script src="scripts/jquery-3.6.1.js"></script>
     <link rel="stylesheet" href="default.css">
   </head>
@@ -33,48 +32,26 @@
         <section id="Breeds" class="tabs" style="display: none">
           <h2>Different Breeds of Surf Fish</h2>
           <p>There are many types of fish that can be caught while surf fishing. It all depends on where you are in the world. Here are some examples of commonly caught fish on the US eastern coast. Here is a list of the 10 most common fish found.</p>
-          <figure>
-            <img src="images/saltwatercatfish.jpg" alt="saltwatercatfish"><br>
-            <figcaption>Here is a saltwater catfish. It is very commonly caught while surf fishing, so much so that most fishermen consider them a nuisance. They can be found all over the place in salt water locations.</figcaption>
-          </figure>
-          <figure>
-            <img src="images/whiting.jpg" alt="whitingfish"><br>
-            <figcaption>Here is a whiting fish. It is a very popular and abundant fish caught while fishing from the beach. They are very easy to catch and can be caught in just about any eastern coast fishing spot.</figcaption>
-          </figure>
-          <figure>
-            <img src="images/pompanofish.jpg" alt="pompanofish"><br>
-            <figcaption>Here is a pompano. It is another very popular fish, that is commonly targeted while surf fishing. It is relatively smaller in size compared to the first two fish.</figcaption>
-          </figure>
-          <figure>
-            <img src="images/reddrum.jpg" alt="reddrumfish"><br>
-            <figcaption>Here is a red drum. This is the largest fish so far. It can be commonly found off the coasts of the southeastern US.</figcaption>
-          </figure>
-          <figure>
-            <img src="images/blackdrum.jpg" alt="blackdrumfish"><br>
-            <figcaption>Here is a black drum. This fish can get huge so be prepared for a long fight if you catch one. These can be found along almost all the coasts of the US.</figcaption>
-          </figure>
-          <figure>
-            <img src="images/bluefish.jpg" alt="bluefish"><br>
-            <figcaption>Here is a blue fish. It is not known for the best tasting meat but if cleaned and eaten quickly, it can actually taste quite good. It is found on most Gulf or Atlantic beaches.</figcaption>
-          </figure>
-          <figure>
-            <img src="images/snook.jpg" alt="snookfish"><br>
-            <figcaption>Here is a snook. They are known for really good tasting meat and a powerful fight. These are generally only found in the southernmost waters because of their intolerance to cold.</figcaption>
-          </figure>
-          <figure>
-            <img src="images/speckledtrout.jpg" alt="speckledtrout"><br>
-            <figcaption>Here is a speckled trout. Even though it has trout in the name, it is not actually related to trout at all. They can be found all along the eastern seaboard.</figcaption>
-          </figure>
-          <figure>
-            <img src="images/spanishmackerel.jpg" alt="spanishmackerelfish"><br>
-            <figcaption>Here is a spanish mackerel. They are known to be fun to catch and because they school you can end up catching alot of them. They are mostly found in the southeastern US.</figcaption>
-          </figure>
-          <figure>
-            <img src="images/smallshark.jpg" alt="smallshark"><br>
-            <figcaption>Here is a small saltwater shark. There are many species of them to be found off the coasts of the US. However most species caught surf fishing are bonnethead and shovelhead sharks.</figcaption>
-          </figure>
+          <br>        
+          <ul id="thumbnail">
+              <li><img src="../project/images/saltwatercatfish.jpg" alt="saltwatercatfish" id="saltwatercatfish" title="saltwatercatfish"><br>Catfish</li>
+              <li><img src="../project/images/whiting.jpg" alt="whiting" id="whiting" title="whiting"><br>Whiting</li>
+              <li><img src="../project/images/pompanofish.jpg" alt="pompano" id="pompano" title="pompano"><br>Pompano</li>
+              <li><img src="../project/images/reddrum.jpg" alt="reddrum" id="reddrum" title="reddrum"><br>Red Drum</li>
+              <li><img src="../project/images/blackdrum.jpg" alt="blackdrum" id="blackdrum" title="blackdrum"><br>Black Drum</li>
+              <li><img src="../project/images/bluefish.jpg" alt="bluefish" id="bluefish" title="bluefish"><br>Bluefish</li>
+              <li><img src="../project/images/snook.jpg" alt="snook" id="snook" title="snook"><br>Snook</li>
+              <li><img src="../project/images/speckledtrout.jpg" alt="speckledtrout" id="speckledtrout" title="speckledtrout"><br>Speckled Trout</li>
+              <li><img src="../project/images/spanishmackerel.jpg" alt="spanishmackerel" id="spanishmackerel" title="spanishmackerel"><br>Mackerel</li>
+              <li><img src="../project/images/smallshark.jpg" alt="smallshark" id="smallshark" title="smallshark"><br>Shark</li>
+          </ul>
+          <br><br>
+          <img src="../project/images/saltwatercatfish.jpg" id="current" alt="saltwatercatfish" title="saltwatercatfish">
+          <h2 id="caption">Here is a saltwater catfish. It is very commonly caught while surf fishing, so much so that most fishermen consider them a nuisance. They can be found all over the place in salt water locations.</h2>
+          <br><br>
         </section>
         <section id="Spots" class="tabs" style="display: none">
+          <div id="maps">
             <h2>Fishing Spots</h2>
             <p>Here is a list of fishing spots on the Eastern Coast of the US and maps to show their location.</p>
             <div class="mapouter"><div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas1" src="https://maps.google.com/maps?q=hilton%20head&t=k&z=11&ie=UTF8&iwloc=&output=embed"></iframe><a href="https://123movies-to.org">123movies</a><br><a href="https://www.embedgooglemap.net">embedgooglemap.net</a></div></div>
@@ -89,7 +66,8 @@
             <p>This is Chesapeake Bay. This covers an area of 64,000 square miles so there is plenty of areas to fish. It is common to find red drum, black drum, croaker, spot, kingfish, gray sea trout, and speckled trout.</p>
             <div class="mapouter"><div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas6" src="https://maps.google.com/maps?q=myrtle%20beach&t=k&z=11&ie=UTF8&iwloc=&output=embed"></iframe><a href="https://123movies-to.org">123movies</a><br><a href="https://www.embedgooglemap.net">embedgooglemap.net</a></div></div>
             <p>This is Myrtle Beach. It is found on the northenmost coast of South Carolina. This is the perfect spot for fishing if your family has to come but isn't into it. You can find flounder, red drum, black drum, sea bass, mackerel, bluefish, and sharks.</p>
-        </section>
+        </div>
+          </section>
         <section id="Baits" class="tabs" style="display: none">
             <h2>Best Baits for Surf Fishing</h2>
             <p>Here is a list of the best live baits for surf fishing.</p>
@@ -123,5 +101,6 @@
       </p>
     </footer>
     <script src="scripts/validate.js"></script>
+    <script src="scripts/client.js"></script>
   </body>
 </html>
