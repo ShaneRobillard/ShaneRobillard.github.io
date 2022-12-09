@@ -61,6 +61,10 @@ body{
     margin-bottom: auto;
     margin-left: auto;
     margin-right: auto;
+    position: relative;
+    text-align: right;
+    height: 500px;
+    width: 600px;
   }
   #Knots iframe{
     margin: auto;
