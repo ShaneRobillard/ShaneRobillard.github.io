@@ -57,6 +57,10 @@ body{
   .mapouter{
     margin: auto;
     scroll-behavior: initial;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
   }
   #Knots iframe{
     margin: auto;
