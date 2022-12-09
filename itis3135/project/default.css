@@ -61,3 +61,7 @@ body{
     margin: auto;
     display: block;
   }
+
+  iframe {
+    border: none;
+  }
