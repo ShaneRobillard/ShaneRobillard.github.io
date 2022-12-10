@@ -94,13 +94,11 @@ div.youtube-videogallery-bodycover,
 div.youtube-videogallery-display {
     transition: all 300ms;
     transform: scale(0);
-    -webkit-transform: scale(0);
 }
 body.youtube-videogallery-active div.youtube-videogallery-bodycover,
 body.youtube-videogallery-active div.youtube-videogallery-display {
     display: block;
     transform: scale(1);
-    -webkit-transform: scale(1);
 }
 body.youtube-videogallery-active div.youtube-videogallery-bodycover {opacity: 0.5}
 body.youtube-videogallery-active div.youtube-videogallery-display { opacity: 1}

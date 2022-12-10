@@ -139,8 +139,6 @@ body{
   #tabs .ui-widget-header {
     background: transparent; 
     border: none;  
-    -moz-border-radius: 0px; 
-    -webkit-border-radius: 0px; 
     border-radius: 0px; 
   }
   #tabs .ui-tabs-nav .ui-state-default { 
@@ -170,8 +168,6 @@ body{
     width: 100%; 
     border-right: none; 
     border-bottom-width: 1px !important; 
-    -moz-border-radius: 4px 0px 0px 4px; 
-    -webkit-border-radius: 4px 0px 0px 4px; 
     border-radius: 4px 0px 0px 4px; 
     overflow: hidden; 
   }
