@@ -5,8 +5,14 @@
     });
 });
 
-$('button').bind('click', function() {
-  $('div#content').html($('div#content' + ($(this).index()+1)).html());
+$("#button1").click(function(){
+  $("#content").load("tackle.html #rods");
+});
+$("#button2").click(function(){
+  $("#content").load("tackle.html #reels");
+});
+$("#button3").click(function(){
+  $("#content").load("tackle.html #rigs");
 });
 
 $(function() {
