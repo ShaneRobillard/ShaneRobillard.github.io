@@ -39,9 +39,9 @@
                     title:'default',
                     thumbWidth:150,
                     videos:[],
-                    urlImg : 'http://img.youtube.com/vi/$id/0.jpg',
-                    urlEmbed : 'http://www.youtube.com/embed/$id',
-                    urlLink : 'http://www.youtube.com/watch?v=$id'
+                    urlImg : 'https://img.youtube.com/vi/$id/0.jpg',
+                    urlEmbed : 'https://www.youtube.com/embed/$id',
+                    urlLink : 'https://www.youtube.com/watch?v=$id'
                 };
 
             this.test = {};
