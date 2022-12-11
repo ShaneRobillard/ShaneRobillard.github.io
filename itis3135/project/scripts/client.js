@@ -5,7 +5,18 @@
     });
 });
 
-
+$(function(){
+    $("body").on("click", "#add_new_data", function(){
+        $("#container").fadeOut();
+        $("#add_data").fadeIn();
+        return false;
+    });
+    $("body").on("click", "#data", function(){
+        $("#container").empty().fadeIn().load("test.html" + " #content");
+        $("#add_data").fadeOut();
+        return false;
+    });
+});
 
 $(function() {
   $( ".maps" ).accordion({
