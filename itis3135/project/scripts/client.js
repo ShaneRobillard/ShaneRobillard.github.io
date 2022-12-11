@@ -5,11 +5,7 @@
     });
 });
 
-$(function(){
-    $("button").click(function(){
-        $("#")
-    });
-});
+
 
 $(function() {
   $( ".maps" ).accordion({
