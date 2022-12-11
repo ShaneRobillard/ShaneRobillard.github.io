@@ -285,3 +285,12 @@ body{
   #container {
     display: flex;
   }
+  #content1 {
+    display: none;
+  }
+  #content2 {
+    display: none;
+  }
+  #content3 {
+    display: none;
+  }

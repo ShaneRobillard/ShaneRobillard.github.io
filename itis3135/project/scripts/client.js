@@ -5,17 +5,8 @@
     });
 });
 
-$(function(){
-    $("body").on("click", "#add_new_data", function(){
-        $("#container").fadeOut();
-        $("#add_data").fadeIn();
-        return false;
-    });
-    $("body").on("click", "#data", function(){
-        $("#container").empty().fadeIn().load("test.html" + " #content");
-        $("#add_data").fadeOut();
-        return false;
-    });
+$('button').bind('click', function() {
+  $('div#content').html($('div#content' + ($(this).index()+1)).html());
 });
 
 $(function() {
