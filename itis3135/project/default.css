@@ -3,7 +3,7 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     color: #BFB7B6;
   }
-  h1,h2{
+  h1,h2,h3{
       text-align: center;
   }
   main img{
@@ -47,16 +47,250 @@ body{
     text-decoration-line: underline;
   }
   #Breeds img{
-    border: 2px black solid;
-    height: 500px;
-    width: 1000px;
+    border: none;
+    height: auto;
+    width: 100px;
     margin: auto;
-    display: block;
+    padding: 5px;
+    object-fit: cover;
+    display: flex;
+    display: inline-block;
   }
   .mapouter{
     margin: auto;
+    scroll-behavior: initial;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    text-align: right;
+    height: 500px;
+    width: 600px;
+  }
+  .gmap_canvas{
+    overflow: hidden;
+    background: none!important;
+    height: 500px;
+    width: 600px;
   }
   #Knots iframe{
     margin: auto;
     display: block;
+  }
+  iframe {
+    border: none;
+  }
+  #thumbnail {
+    list-style-type:none;
+    margin-left: auto;
+    margin-right: auto;
+    display: table;
+    text-align: center; 
+  }
+  #thumbnail li {
+    display: inline-block;
+    list-style-type:none;
+    text-align: center;
+  }
+  #thumbnail li img {
+    width: 100px;
+    height: auto;
+    cursor: pointer;
+    margin: 5px;
+  }
+  #current {
+    margin: auto;
+  }
+  #caption {
+    color: #BFB7B6;
+  }
+  .maps {
+    width: 50%;
+    margin: 0 auto;
+    border: none;
+    box-shadow: none;
+    border-width: 0px;
+  }
+  .maps h3 {
+    text-align: center;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    background-color: #ABFAA9;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    border: 1px solid black;
+    border-radius: 3px;
+    color: #190E4F; 
+  }
+  .maps h3:hover {
+    cursor: pointer;
+  }
+  .maps div {
+    background-color: #36382E;
+    color: #BFB7B6;
+  }
+  #tabs {
+    position: relative;
+    padding-left: 6.5em;
+    background: transparent;
+    border: none;
+  }
+  #tabs .ui-widget-header {
+    background: transparent; 
+    border: none;  
+    border-radius: 0px; 
+  }
+  #tabs .ui-tabs-nav .ui-state-default { 
+    background: transparent; 
+    border: none; 
+  } 
+  #tabs .ui-tabs-nav .ui-state-active { 
+    background: transparent url(images/uiTabsArrow.png) no-repeat bottom center; 
+    border: none; 
+  } 
+  #tabs .ui-tabs-nav .ui-state-default a { 
+    color: #BFB7B6; 
+  } 
+  #tabs .ui-tabs-nav .ui-state-active a { 
+    color: #ABFAA9; 
+  }
+  #tabs .ui-tabs-nav {
+    position: absolute; 
+    left: 0.25em; 
+    top: 0.25em; 
+    bottom: 0.25em; 
+    width: 6em; 
+    padding: 0.2em 0 0.2em 0.2em;
+  }
+  #tabs .ui-tab-nav li {
+    right: 1px; 
+    width: 100%; 
+    border-right: none; 
+    border-bottom-width: 1px !important; 
+    border-radius: 4px 0px 0px 4px; 
+    overflow: hidden; 
+  }
+  #tabs .ui-tabs-nav li.ui-tabs-selected, 
+  #tabs .ui-tabs-nav li.ui-state-active { 
+    border-right: 1px solid transparent; 
+  } 
+  #tabs .ui-tabs-nav li a { 
+    float: right; 
+    width: 100%; 
+    text-align: right; 
+  } 
+  #tabs .ui-tabs-panel { 
+    height: 40em; 
+  }
+  #tabs-1, #tabs-2, #tabs-3, #tabs-4, #tabs-5, #tabs-6 {
+    color: #BFB7B6;
+    text-align: center;
+  }
+
+  @media all and (min-width: 600px) {
+    /* Change color for backdrop */
+    .fancybox-custom-layout .fancybox-bg {
+      background: #fcfaf9;
+    }
+  
+    .fancybox-custom-layout.fancybox-is-open .fancybox-bg {
+      opacity: 1;
+    }
+  
+    /* Move caption area to the right side */
+    .fancybox-custom-layout .fancybox-caption {
+      background: #f1ecec;
+      bottom: 0;
+      color: #6c6f73;
+      left: auto;
+      padding: 30px 20px;
+      right: 44px;
+      top: 0;
+      width: 256px;
+    }
+  
+    .fancybox-custom-layout .fancybox-caption__body {
+      max-height: 100%;
+    }
+  
+    .fancybox-custom-layout .fancybox-caption h3 {
+      color: #444;
+      font-size: 21px;
+      line-height: 1.3;
+      margin-bottom: 24px;
+    }
+  
+    .fancybox-custom-layout .fancybox-caption a {
+      color: #444;
+    }
+  
+    /* Remove gradient from caption*/
+    .fancybox-custom-layout .fancybox-caption::before {
+      display: none;
+    }
+  
+    /* Adjust content area position */
+    .fancybox-custom-layout .fancybox-stage {
+      right: 300px;
+    }
+  
+    /* Align buttons at the right side  */
+    .fancybox-custom-layout .fancybox-toolbar {
+      background: #3b3b45;
+      bottom: 0;
+      left: auto;
+      right: 0;
+      top: 0;
+      width: 44px;
+    }
+  
+    /* Remove background from all buttons */
+    .fancybox-custom-layout .fancybox-button {
+      background: transparent;
+    }
+  
+    /* Navigation arrows */
+    .fancybox-custom-layout .fancybox-navigation .fancybox-button div {
+      padding: 2px;
+    }
+  
+    .fancybox-custom-layout .fancybox-navigation .fancybox-button[disabled] {
+      color: #ddd;
+    }
+  
+    .fancybox-custom-layout .fancybox-navigation .fancybox-button:not([disabled]) {
+      color: #333;
+    }
+  
+    /* Reposition right arrow */
+    .fancybox-custom-layout .fancybox-button--arrow_right {
+      right: 308px;
+    }
+  }
+  .youtube-videogallery {
+    margin: 0 auto;
+    text-align: center;
+  }
+  #Tackle button {
+    text-align: center;
+    margin: 0 auto;
+    padding: 5px;
+    border-radius: 4px;
+    font-size: 20px;
+    background-color: #ABFAA9;
+    color: #190E4F;
+    cursor: pointer;
+  }
+  #container {
+    display: flex;
+  }
+  #content1 {
+    display: none;
+  }
+  #content2 {
+    display: none;
+  }
+  #content3 {
+    display: none;
   }

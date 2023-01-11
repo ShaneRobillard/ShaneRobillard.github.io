@@ -4,9 +4,15 @@
     <meta charset="UTF-8">
     <title> &#8734; Shane Robillard's Slow Rabbit &#8734; ITIS 3135 Page &#8734; Surf Fishing Page &#8734;</title>
     <link rel="icon" type="image/x-icon" href="images/wolf.png">
-    <script src="scripts/client.js"></script>
-    <script src="scripts/jquery-3.6.1.js"></script>
+    <link rel="stylesheet" href="../project/scripts/jquery-ui-1.13.2/jquery-ui.css">
+    <link rel="stylesheet" href="fancybox.css">
+    <link rel="stylesheet" href="panzoom.css">
+    <link rel="stylesheet" href="youtube-video-gallery/youtube-video-gallery.css">
     <link rel="stylesheet" href="default.css">
+    <script src="scripts/jquery-3.6.1.js"></script>
+    <script src="scripts/jquery-ui-1.13.2/jquery-ui.js"></script>
+    <script src="scripts/fancybox.umd.js"></script>
+    <script src="youtube-video-gallery/jquery.youtubevideogallery.js"></script>
   </head>
   <body>
     <header>
@@ -17,100 +23,158 @@
         <button class="bookTab" onclick="openBook(event, 'Spots')">Fishing Spots</button>
         <button class="bookTab" onclick="openBook(event, 'Baits')">Different Baits</button>
         <button class="bookTab" onclick="openBook(event, 'Knots')">Fishing Knots</button>
+        <button class="bookTab" onclick="openBook(event, 'Tackle')">Fishing Tackle</button>
       </nav>
     </header>
     <main>
-        <section id="Fishing" class="tabs">
+        <section id="Fishing" class="tabs" aria-label="Fishing">
           <h2>Surf Fishing</h2>
           <p>Surf fishing is the practice of catching fish while standing on the shoreline of the ocean or wading into the ocean surf.</p>
           <p>A general term, surf fishing may or may not include casting a lure or bait, and refers to all type of shore fishing.</p><br>
           <figure>
-            <img src="images/surffishinghome.jpg" alt="surffishinghome"><br>
+            <img src="images/surffishinghome.jpg" alt="surffishinghome" aria-label="surf fishing home"><br>
             <figcaption>Lone rod of a fisherman surf fishing.</figcaption>
           </figure>
           <p>"A bad day of fishing is better than a good day at work." - Unknown</p>
         </section>
-        <section id="Breeds" class="tabs" style="display: none">
+        <section id="Breeds" class="tabs" style="display: none" aria-label="Breeds">
           <h2>Different Breeds of Surf Fish</h2>
-          <p>There are many types of fish that can be caught while surf fishing. It all depends on where you are in the world. Here are some examples of commonly caught fish on the US eastern coast. Here is a list of the 10 most common fish found.</p>
-          <figure>
-            <img src="images/saltwatercatfish.jpg" alt="saltwatercatfish"><br>
-            <figcaption>Here is a saltwater catfish. It is very commonly caught while surf fishing, so much so that most fishermen consider them a nuisance. They can be found all over the place in salt water locations.</figcaption>
-          </figure>
-          <figure>
-            <img src="images/whiting.jpg" alt="whitingfish"><br>
-            <figcaption>Here is a whiting fish. It is a very popular and abundant fish caught while fishing from the beach. They are very easy to catch and can be caught in just about any eastern coast fishing spot.</figcaption>
-          </figure>
-          <figure>
-            <img src="images/pompanofish.jpg" alt="pompanofish"><br>
-            <figcaption>Here is a pompano. It is another very popular fish, that is commonly targeted while surf fishing. It is relatively smaller in size compared to the first two fish.</figcaption>
-          </figure>
-          <figure>
-            <img src="images/reddrum.jpg" alt="reddrumfish"><br>
-            <figcaption>Here is a red drum. This is the largest fish so far. It can be commonly found off the coasts of the southeastern US.</figcaption>
-          </figure>
-          <figure>
-            <img src="images/blackdrum.jpg" alt="blackdrumfish"><br>
-            <figcaption>Here is a black drum. This fish can get huge so be prepared for a long fight if you catch one. These can be found along almost all the coasts of the US.</figcaption>
-          </figure>
-          <figure>
-            <img src="images/bluefish.jpg" alt="bluefish"><br>
-            <figcaption>Here is a blue fish. It is not known for the best tasting meat but if cleaned and eaten quickly, it can actually taste quite good. It is found on most Gulf or Atlantic beaches.</figcaption>
-          </figure>
-          <figure>
-            <img src="images/snook.jpg" alt="snookfish"><br>
-            <figcaption>Here is a snook. They are known for really good tasting meat and a powerful fight. These are generally only found in the southernmost waters because of their intolerance to cold.</figcaption>
-          </figure>
-          <figure>
-            <img src="images/speckledtrout.jpg" alt="speckledtrout"><br>
-            <figcaption>Here is a speckled trout. Even though it has trout in the name, it is not actually related to trout at all. They can be found all along the eastern seaboard.</figcaption>
-          </figure>
-          <figure>
-            <img src="images/spanishmackerel.jpg" alt="spanishmackerelfish"><br>
-            <figcaption>Here is a spanish mackerel. They are known to be fun to catch and because they school you can end up catching alot of them. They are mostly found in the southeastern US.</figcaption>
-          </figure>
-          <figure>
-            <img src="images/smallshark.jpg" alt="smallshark"><br>
-            <figcaption>Here is a small saltwater shark. There are many species of them to be found off the coasts of the US. However most species caught surf fishing are bonnethead and shovelhead sharks.</figcaption>
-          </figure>
+          <p>There are many types of fish that can be caught while surf fishing. It all depends on where you are in the world. Here are some examples of commonly caught fish on the US eastern coast. Here is a slideshow of the 10 most common fish found.</p>
+          <div>
+          <p class="imglist">
+            <a href="images/saltwatercatfish.jpg" data-fancybox="images" data-type="image" data-caption="This is a saltwater catfish. It is very commonly caught while surf fishing, so much so that most fishermen consider them a nuisance. They can be found all over the place in salt water locations.">
+              <img src="images/saltwatercatfish.jpg" alt="saltwatercatfish">
+            </a>
+            <a href="images/whiting.jpg" data-fancybox="images" data-type="image" data-caption="This is a whiting fish. It is a very popular and abundant fish caught while fishing from the beach. They are very easy to catch and can be caught in just about any eastern coast fishing spot.">
+              <img src="images/whiting.jpg" alt="whiting">
+            </a>
+            <a href="images/pompanofish.jpg" data-fancybox="images" data-type="image" data-caption="This is a pompano. It is another very popular fish, that is commonly targeted while surf fishing. It is relatively smaller in size compared to the first two fish.">
+              <img src="images/pompanofish.jpg" alt="pompanofish">
+            </a> 
+            <a href="images/reddrum.jpg" data-fancybox="images" data-type="image" data-caption="This is a red drum. This is the largest fish so far. It can be commonly found off the coasts of the southeastern US.">
+              <img src="images/reddrum.jpg" alt="reddrum">
+            </a> 
+            <a href="images/blackdrum.jpg" data-fancybox="images" data-type="image" data-caption="This is a black drum. This fish can get huge so be prepared for a long fight if you catch one. These can be found along almost all the coasts of the US.">
+              <img src="images/blackdrum.jpg" alt="blackdrum">
+            </a>
+            <a href="images/bluefish.jpg" data-fancybox="images" data-type="image" data-caption="This is a blue fish. It is not known for the best tasting meat but if cleaned and eaten quickly, it can actually taste quite good. It is found on most Gulf or Atlantic beaches.">
+              <img src="images/bluefish.jpg" alt="bluefish">
+            </a>
+            <a href="images/snook.jpg" data-fancybox="images" data-type="image" data-caption="This is a snook. They are known for really good tasting meat and a powerful fight. These are generally only found in the southernmost waters because of their intolerance to cold.">
+              <img src="images/snook.jpg" alt="snook">
+            </a>
+            <a href="images/speckledtrout.jpg" data-fancybox="images" data-type="image" data-caption="This is a speckled trout. Even though it has trout in the name, it is not actually related to trout at all. They can be found all along the eastern seaboard.">
+              <img src="images/speckledtrout.jpg" alt="speckledtrout">
+            </a>
+            <a href="images/spanishmackerel.jpg" data-fancybox="images" data-type="image" data-caption="This is a spanish mackerel. They are known to be fun to catch and because they school you can end up catching alot of them. They are mostly found in the southeastern US.">
+              <img src="images/spanishmackerel.jpg" alt="spanishmackerel">
+            </a>
+            <a href="images/smallshark.jpg" data-fancybox="images" data-type="image" data-caption="This is a small saltwater shark. There are many species of them to be found off the coasts of the US. However most species caught surf fishing are bonnethead and shovelhead sharks.">
+              <img src="images/smallshark.jpg" alt="smallshark">
+            </a>
+          </p>
+          </div>
+          <br><br>
         </section>
-        <section id="Spots" class="tabs" style="display: none">
+        <section id="Spots" class="tabs" style="display: none" aria-label="Spots">
+          <div class="maps">
             <h2>Fishing Spots</h2>
             <p>Here is a list of fishing spots on the Eastern Coast of the US and maps to show their location.</p>
-            <div class="mapouter"><div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=hilton%20head&t=k&z=11&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://123movies-to.org">123movies</a><br><style>.mapouter{position:relative;text-align:right;height:500px;width:600px;}</style><a href="https://www.embedgooglemap.net">embedgooglemap.net</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:600px;}</style></div></div>
-            <p>This is Hilton Head Island. It is a very popular surf fishing spot. It is located off the coast of South Carolina. You can find everything there including redfish, bluefish, trout, flounder, sheepshead, and shark.</p>
-            <div class="mapouter"><div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=cape%20cod%20massachusets&t=k&z=11&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://123movies-to.org">123movies</a><br><style>.mapouter{position:relative;text-align:right;height:500px;width:600px;}</style><a href="https://www.embedgooglemap.net">embedgooglemap.net</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:600px;}</style></div></div>
-            <p>This is Cape Cod. It is located in Massachusetts. It is known for its beautiful landscape and plentiful fishing. You can find striped bass, fluke, bluefish, flounder, mackerel, blue fin, yellow fin, haddock, and cod.</p>
-            <div class="mapouter"><div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=Montauk,%20New%20York&t=k&z=11&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://123movies-to.org">123movies</a><br><style>.mapouter{position:relative;text-align:right;height:500px;width:600px;}</style><a href="https://www.embedgooglemap.net">embedgooglemap.net</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:600px;}</style></div></div>
-            <p>This is Montauk. It is the largest commercial fishing spot in all of New York. You can find flounder, fluke, porgies, bluefish, striped bass, and blackfish on the shore.</p>
-            <div class="mapouter"><div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=charleston%20sc&t=k&z=11&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://123movies-to.org">123movies</a><br><style>.mapouter{position:relative;text-align:right;height:500px;width:600px;}</style><a href="https://www.embedgooglemap.net">embedgooglemap.net</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:600px;}</style></div></div>
-            <p>This is Charleston. It is only a couple of hours away from Hilton Head and still in South Carolina. Here you can find red drum, flounder, trout, black drum, sheepshead, and multiple varietes of shark.</p>
-            <div class="mapouter"><div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=chesapeake%20bay&t=k&z=11&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://123movies-to.org">123movies</a><br><style>.mapouter{position:relative;text-align:right;height:500px;width:600px;}</style><a href="https://www.embedgooglemap.net">embedgooglemap.net</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:600px;}</style></div></div>
-            <p>This is Chesapeake Bay. This covers an area of 64,000 square miles so there is plenty of areas to fish. It is common to find red drum, black drum, croaker, spot, kingfish, gray sea trout, and speckled trout.</p>
-            <div class="mapouter"><div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=myrtle%20beach&t=k&z=11&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://123movies-to.org">123movies</a><br><style>.mapouter{position:relative;text-align:right;height:500px;width:600px;}</style><a href="https://www.embedgooglemap.net">embedgooglemap.net</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:600px;}</style></div></div>
-            <p>This is Myrtle Beach. It is found on the northenmost coast of South Carolina. This is the perfect spot for fishing if your family has to come but isn't into it. You can find flounder, red drum, black drum, sea bass, mackerel, bluefish, and sharks.</p>
-        </section>
-        <section id="Baits" class="tabs" style="display: none">
+            <h3>Hilton Head Island</h3>
+            <div><div class="mapouter"><div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas1" src="https://maps.google.com/maps?q=hilton%20head&t=k&z=11&ie=UTF8&iwloc=&output=embed"></iframe><a href="https://123movies-to.org">123movies</a><br><a href="https://www.embedgooglemap.net">embedgooglemap.net</a></div></div>
+            <p>This is Hilton Head Island. It is a very popular surf fishing spot. It is located off the coast of South Carolina. You can find everything there including redfish, bluefish, trout, flounder, sheepshead, and shark.</p></div>
+            <h3>Cape Cod</h3>
+            <div><div class="mapouter"><div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas2" src="https://maps.google.com/maps?q=cape%20cod%20massachusets&t=k&z=11&ie=UTF8&iwloc=&output=embed"></iframe><a href="https://123movies-to.org">123movies</a><br><a href="https://www.embedgooglemap.net">embedgooglemap.net</a></div></div>
+            <p>This is Cape Cod. It is located in Massachusetts. It is known for its beautiful landscape and plentiful fishing. You can find striped bass, fluke, bluefish, flounder, mackerel, blue fin, yellow fin, haddock, and cod.</p></div>
+            <h3>Montauk</h3>
+            <div><div class="mapouter"><div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas3" src="https://maps.google.com/maps?q=Montauk,%20New%20York&t=k&z=11&ie=UTF8&iwloc=&output=embed"></iframe><a href="https://123movies-to.org">123movies</a><br><a href="https://www.embedgooglemap.net">embedgooglemap.net</a></div></div>
+            <p>This is Montauk. It is the largest commercial fishing spot in all of New York. You can find flounder, fluke, porgies, bluefish, striped bass, and blackfish on the shore.</p></div>
+            <h3>Charleston</h3>
+            <div><div class="mapouter"><div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas4" src="https://maps.google.com/maps?q=charleston%20sc&t=k&z=11&ie=UTF8&iwloc=&output=embed"></iframe><a href="https://123movies-to.org">123movies</a><br><a href="https://www.embedgooglemap.net">embedgooglemap.net</a></div></div>
+            <p>This is Charleston. It is only a couple of hours away from Hilton Head and still in South Carolina. Here you can find red drum, flounder, trout, black drum, sheepshead, and multiple varieties of shark.</p></div>
+            <h3>Chesapeake Bay</h3>
+            <div><div class="mapouter"><div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas5" src="https://maps.google.com/maps?q=chesapeake%20bay&t=k&z=11&ie=UTF8&iwloc=&output=embed"></iframe><a href="https://123movies-to.org">123movies</a><br><a href="https://www.embedgooglemap.net">embedgooglemap.net</a></div></div>
+            <p>This is Chesapeake Bay. This covers an area of 64,000 square miles so there is plenty of areas to fish. It is common to find red drum, black drum, croaker, spot, kingfish, gray sea trout, and speckled trout.</p></div>
+            <h3>Myrtle Beach</h3>
+            <div><div class="mapouter"><div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas6" src="https://maps.google.com/maps?q=myrtle%20beach&t=k&z=11&ie=UTF8&iwloc=&output=embed"></iframe><a href="https://123movies-to.org">123movies</a><br><a href="https://www.embedgooglemap.net">embedgooglemap.net</a></div></div>
+            <p>This is Myrtle Beach. It is found on the northenmost coast of South Carolina. This is the perfect spot for fishing if your family has to come but isn't into it. You can find flounder, red drum, black drum, sea bass, mackerel, bluefish, and sharks.</p></div>
+        </div>
+          </section>
+        <section id="Baits" class="tabs" style="display: none" aria-label="Baits">
             <h2>Best Baits for Surf Fishing</h2>
-            <p>Here is a list of the best live baits for surf fishing.</p>
-            <figure>
-                <img src="images/shrimpbait.jpeg" alt="shrimpbait"><br>
-                <figcaption>Everything Eats Shrimp!</figcaption>
-            </figure>
-            <ul>
-                <li>Shrimp: As stated above, everything in the water loves shrimp making it one of the best if not best baits to use. They best used fresh instead of frozen.</li>
-                <li>Sand Fleas: One of the best things about this bait is you can catch them yourself fresh. They are plentiful on the beach during anytime of the day.</li>
-                <li>Clams: This bait is best used alive. They are usually closed completely when found alive. It is best to find a store for this as it is not cost friendly to find them on your own.</li>
-                <li>Crabs: Crabs take some preparation for use as bait. They are quite useful when prepared properly as they can survive harsh conditions. Fish love them.</li>
-                <li>Cut Bait: This is useful in the fact that you can reuse the small fish you caught as bait. You can turn the small fish into large fish.</li>
-            </ul>         
+            <p>This is a small selection of the best live baits for surf fishing.</p>
+            <div id="tabs">
+              <ul>
+                <li><a href="#tabs-1">Shrimp</a></li>
+                <li><a href="#tabs-2">Sand Fleas</a></li>
+                <li><a href="#tabs-3">Clams</a></li>
+                <li><a href="#tabs-4">Crabs</a></li>
+                <li><a href="#tabs-5">Squid</a></li>
+                <li><a href="#tabs-6">Cut Bait</a></li>
+              </ul>
+              <div id="tabs-1">
+                <figure>
+                  <img src="images/shrimpbait.jpeg" alt="shrimpbait"><br>
+                  <figcaption>Everything Eats Shrimp!</figcaption>
+                </figure> 
+                <strong>Shrimp</strong>: As stated above, everything in the water loves shrimp, making it one of the best if not best baits to use. They can be used in both freshwater and saltwater to catch a variety of fish. They are best used fresh instead of frozen. You can find them at most bait shops as well catching them fresh yourself.
+              </div>
+              <div id="tabs-2">
+                <figure>
+                  <img src="images/sandfleabait.jpg" alt="sandfleabait"><br>
+                  <figcaption>Also known as mole crabs!</figcaption>
+                </figure> 
+                <strong>Sand Fleas</strong>: One of the best things about this bait is you can catch them yourself fresh. They are plentiful on the beach during anytime of the day. They are naturally already a part of most fish's diet. This makes them a tempting target while fishing. With its hard shell, it is easy to hook as well. 
+              </div>
+              <div id="tabs-3">
+                <figure>
+                  <img src="images/clambait.jpg" alt="clambait"><br>
+                  <figcaption>Come with their own container!</figcaption>
+                </figure> 
+                <strong>Clams</strong>: This bait is best used alive. They are usually closed completely when found fresh and alive. Also, the fresher it is, the easier it is to hook and keep hooked. It is best to find a store for this as it is not cost friendly to find them on your own. They have a unique smell that makes them alluring to fish. 
+              </div>
+              <div id="tabs-4">
+                <figure>
+                  <img src="images/crabbait.jpg" alt="crabbait"><br>
+                  <figcaption>Easily hookable!</figcaption>
+                </figure> 
+                <strong>Crabs</strong>: Crabs take some preparation for use as bait. They can be found fresh using crab traps, or from bait shops all along the coast. They are quite useful when prepared properly as they can survive harsh conditions when casting and reeling. There are dozens of species and they are quite delicious for fish of all sizes. 
+              </div>
+              <div id="tabs-5">
+                <figure>
+                  <img src="images/squidbait.jpg" alt="squidbait"><br>
+                  <figcaption>Usable whole or sliced up!</figcaption>
+                </figure> 
+                <strong>Squid</strong>: You can use squid whole or cut them into strips. Squid comes in a variety of sizes and can be found in bait shops and even supermarkets. With squid it doesn't have to be fresh, allowing for storage of the bait for later. It is one of the best all-around baits to have for fishing as it can be used to catch a wide variety of fish. 
+              </div>
+              <div id="tabs-6">
+                <figure>
+                  <img src="images/cutbait.jpg" alt="cutbait"><br>
+                  <figcaption>Using fish to catch bigger fish!</figcaption>
+                </figure> 
+                <strong>Cut Bait</strong>: This is useful in the fact that you can reuse the small fish you caught as bait. You can turn the small fish into large fish as easy as hooking and casting. All varieties of fish can easily be cut up and reused to catch the fish you actually want.
+              </div>
+            </div>
         </section>
-        <section id="Knots" class="tabs" style="display: none">
+        <section id="Knots" class="tabs" style="display: none" aria-label="Knots">
           <h2>Best Knots for Surf Fishing</h2>
           <p>Here are some videos of the best knots for surf fishing.</p>
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/o4LMri8waZU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          <br>
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/tpDCDCxGtIM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <ul class="youtube-videogallery">
+            <li><a href="https://www.youtube.com/embed/JA66TPi9gT4">Uni to Uni Knot</a></li>
+            <li><a href="https://www.youtube.com/embed/o4LMri8waZU">Improved Clinch</a></li>
+            <li><a href="https://www.youtube.com/embed/XqmJXKCjuyk">Duncan Loop</a></li>
+            <li><a href="https://www.youtube.com/embed/tpDCDCxGtIM">Surgeon's Knot</a></li>
+            <li><a href="https://www.youtube.com/embed/0-5KWM-abq4">Uni-Knot</a></li>
+            <li><a href="https://www.youtube.com/embed/8H88QrRNrKg">Berkley Braid Knot</a></li>
+            <li><a href="https://www.youtube.com/embed/Z-OVHsjoHlA">Berkley Trilene Knot</a></li>
+            <li><a href="https://www.youtube.com/embed/Sj7kyqzLmuw">Palomar Knot</a></li>
+        </ul>
+        </section>
+        <section id="Tackle" class="tabs" style="display: none">
+          <h2>Best Tackle for Surf Fishing</h2>
+          <p>There are many choices when it comes to fishing equipment, I have put together a guide to buying them.</p>
+          <div id="container"><button id="button1" type="button" aria-label="Rods">Rods</button><button id="button2" type="button" aria-label="Reels">Reels</button><button id="button3" type="button" aria-label="Rigs">Rigs</button></div>
+          <div id="content"></div>
         </section>
     </main>
     <footer>
@@ -123,5 +187,6 @@
       </p>
     </footer>
     <script src="scripts/validate.js"></script>
+    <script src="scripts/client.js"></script>
   </body>
 </html>
