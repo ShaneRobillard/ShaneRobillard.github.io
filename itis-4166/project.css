@@ -3,13 +3,46 @@
     border: 3px solid black;
 }
 
-.logo {
-    float: left;
+.header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
 }
 
 .topmenu {
-    float: right;
     text-align: right;
     vertical-align:top;
     padding: 5px;
+}
+
+.pages {
+    text-align: left;
+    border-top: 5px solid black;
+    border-bottom: 5px solid black;
+    padding: 5px;
+    margin: 5px;
+}
+
+a:link, a:visited {
+    color: white;
+    text-decoration-line: none;
+  }
+
+a:hover{
+    color: white;
+    text-decoration-line: underline;
+    background-color: navy;
+}
+
+body {
+    background-color: navy;
+}
+
+footer {
+    border-top: 5px solid black;
+    color: white;
+}
+
+.body {
+    background-color: white;
 }
