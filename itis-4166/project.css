@@ -47,7 +47,7 @@ footer {
 }
 
 .body {
-    width: 9000px;
+    width: auto;
     background-color:#fff;
     margin: auto;
     text-align: left;
@@ -93,15 +93,20 @@ p {
 }
 
 form {
-    display: table;
+    display: grid;
+    grid-template-columns: 1fr auto;
 }
 
-form > p {
-    display: table-row;
+label {
+    grid-column: 1/2;
+}
+
+input {
+    grid-column: 2/3;
+    align-items: flex-end;
 }
 
 form input, form select, form label {
-    display: table-cell;
     margin: 5px;
 }
 
@@ -124,5 +129,5 @@ input[type=submit] {
     background-color: navy;
     color: white;
     width: 700px;
-    float:right;
+    height: 50px;
 }
