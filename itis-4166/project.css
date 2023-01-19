@@ -59,8 +59,70 @@ li {
     padding-top: 5px;
     padding-bottom: 5px;
     list-style-type: none;
+    color: black;
 }
 
-li a{
+.links > li > a{
     color: black;
+    background-color: white;
+}
+
+h2,h2+span {
+    display: inline-block;
+}
+
+h3,h3+p {
+    display: inline-block;
+}
+
+h3 {
+    margin-left: 30px;
+    padding: 0px;
+    line-height: 0.1em;
+}
+
+p {
+    margin-left: 5px;
+}
+
+.telescope {
+    width: 150px;
+    float: left;
+    padding-top: 57px;
+    padding-bottom: 70px;
+}
+
+form {
+    display: table;
+}
+
+form > p {
+    display: table-row;
+}
+
+form input, form select, form label {
+    display: table-cell;
+    margin: 5px;
+}
+
+#details {
+    height: 100px;
+    width: 700px;
+    background-color: lightgrey;
+    border: none;
+    color: black;
+}
+
+#title, #category, #location, #start, #end {
+    width: 700px;
+    background-color: lightgrey;
+    border: none;
+    color: black;
+}
+
+input[type=submit] {
+    background-color: navy;
+    color: white;
+    width: 700px;
+    float:right;
 }
