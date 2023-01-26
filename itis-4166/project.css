@@ -94,7 +94,7 @@ p {
 
 form {
     display: grid;
-    grid-template-columns: 1fr auto;
+    grid-template-columns: max-content auto;
 }
 
 label {
@@ -103,11 +103,14 @@ label {
 
 input {
     grid-column: 2/3;
-    align-items: flex-end;
 }
 
 form input, form select, form label {
     margin: 5px;
+}
+
+.category {
+    margin-bottom: 30px;
 }
 
 #details {
