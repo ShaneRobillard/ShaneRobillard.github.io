@@ -17,7 +17,7 @@ router.get('/:id', controller.show);
 //GET /stories/:id/edit: send html form for editing an existing story
 router.get('/:id/edit', controller.edit);
 
-//POST /stories/:id: update the story identified by id
+//PUT /stories/:id: update the story identified by id
 router.put('/:id', controller.update);
 
 //DELETE /stories/:id: delete the story identified by id
