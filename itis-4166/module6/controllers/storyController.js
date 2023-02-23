@@ -17,7 +17,7 @@ exports.create = (req,res)=>{
     res.redirect('/stories');
 };
 
-exports.show = (req,res,next)=>{
+exports.show = (req, res, next)=>{
     let id = req.params.id;
     let story = model.findById(id);
     if(story) {
@@ -29,7 +29,7 @@ exports.show = (req,res,next)=>{
     }
 };
 
-exports.edit = (req,res,next)=>{
+exports.edit = (req, res, next)=>{
     let id = req.params.id;
     let story = model.findById(id);
     if(story) {
@@ -41,7 +41,7 @@ exports.edit = (req,res,next)=>{
     }
 };
 
-exports.update = (req,res,next)=>{
+exports.update = (req, res, next)=>{
     let story = req.body;
     let id = req.params.id;
     if (model.updateById(id, story)) {
@@ -53,7 +53,7 @@ exports.update = (req,res,next)=>{
     }
 };
 
-exports.delete = (req,res,next)=>{
+exports.delete = (req, res, next)=>{
     let id = req.params.id;
     if(model.deleteById(id)){
         res.redirect('/stories');
