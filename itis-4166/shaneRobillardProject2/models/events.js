@@ -78,7 +78,6 @@ exports.findById = function(id) {
 
 exports.save = function(event){
     event.id = uuidv4();
-    //event.image = img.src;
     events.push(event);
 };
 
@@ -91,7 +90,7 @@ exports.updateById = function(id, newEvent){
         event.endTime = newEvent.endTime;
         event.location = newEvent.location;
         event.details = newEvent.details;
-        //event.image = newEvent.image;
+        event.image = newEvent.image;
         return true;
     } else {
         return false;
