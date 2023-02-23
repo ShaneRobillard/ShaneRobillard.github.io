@@ -122,7 +122,7 @@ form input, form select, form label {
     color: black;
 }
 
-#title, #category, #location, #start, #end {
+#title, #category, #location, #start, #end, #hostName {
     width: 700px;
     background-color: lightgrey;
     border: none;
