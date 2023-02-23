@@ -67,3 +67,43 @@ const events = [
     image: img.src='../../public/images/staratlas.jpg'
 },
 ];
+
+exports.find = function(){
+    return events;
+}
+
+exports.findById = function(id) {
+    return events.find(story=>story.id === id);
+};
+
+exports.save = function(event){
+    event.id = uuidv4();
+    //event.image = img.src;
+    events.push(event);
+};
+
+exports.updateById = function(id, newEvent){
+    let event = events.find(event=>event.id === id);
+    if(event){
+        event.title = newEvent.title;
+        event.hostName = newEvent.hostName;
+        event.startTime = newEvent.startTime;
+        event.endTime = newEvent.endTime;
+        event.location = newEvent.location;
+        event.details = newEvent.details;
+        //event.image = newEvent.image;
+        return true;
+    } else {
+        return false;
+    }
+};
+
+exports.deleteById = function(id) {
+    let index = events.findIndex(event=>event.id === id);
+    if(index !== -1) {
+        events.splice(index, 1);
+        return true;
+    } else {
+        return false;
+    }
+};
