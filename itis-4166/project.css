@@ -140,3 +140,9 @@ input[type=submit] {
     float: right;
     margin-right: 30px;
 }
+
+#edit {
+    color: black;
+    text-decoration-line: none;
+    background-color: white;
+}

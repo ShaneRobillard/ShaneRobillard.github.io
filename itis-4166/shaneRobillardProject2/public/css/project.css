@@ -141,3 +141,8 @@ input[type=submit] {
     margin-right: 30px;
 }
 
+#edit {
+    color: black;
+    text-decoration-line: none;
+    background-color: white;
+}
