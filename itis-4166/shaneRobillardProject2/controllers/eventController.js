@@ -6,11 +6,15 @@ exports.create = (req,res)=>{
     res.redirect('/events');
 };
 
+exports.newEvent = (req,res)=>{
+    res.render('../story/newEvent', {id});
+};
+
 exports.show = (req, res, next)=>{
     let id = req.params.id;
     let event = model.findById(id);
     if(event) {
-        res.render('./story/event', {event});
+        res.render('../story/event', {event});
     } else {
         let err = new Error('Cannot find an event with id ' + id);
         err.status = 404;
@@ -22,7 +26,7 @@ exports.edit = (req, res, next)=>{
     let id = req.params.id;
     let event = model.findById(id);
     if(event) {
-        res.render('./story/edit', {event});
+        res.render('../story/edit', {event});
     } else {
         let err = new Error('Cannot find an event with id ' + id);
         err.status = 404;

@@ -40,7 +40,7 @@ app.use((err, req, res, next)=>{
         err.message = ("Internal Server Error");
     }
     res.status(err.status);
-    res.render('error', {error: err});
+    res.render('./story/error', {error: err});
 });
 
 //start the server

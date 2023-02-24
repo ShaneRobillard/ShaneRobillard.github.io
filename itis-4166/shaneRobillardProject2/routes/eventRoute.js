@@ -4,16 +4,14 @@ const router = express.Router();
 
 router.get('/edit', controller.edit);
 
-router.get('/event', controller.event);
-
-router.get('/events', controller.events);
+router.get('/:id', controller.show);
 
 router.get('/newEvent', controller.newEvent);
 
 router.post('/', controller.create);
 
-router.put('/', controller.update);
+router.put('/:id', controller.update);
 
-router.delete('/', controller.delete);
+router.delete('/:id', controller.delete);
 
 module.exports = router;
