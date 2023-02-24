@@ -25,7 +25,6 @@ app.get('/', (req, res)=>{
 });
 
 app.use('/', mainRoute);
-
 app.use('/events', eventRoute);
 
 app.use((req, res, next)=>{
