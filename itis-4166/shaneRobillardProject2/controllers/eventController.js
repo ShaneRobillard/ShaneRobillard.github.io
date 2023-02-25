@@ -1,13 +1,17 @@
 const model = require('../models/events')
 
+exports.index = (req,res)=>{
+    res.render('./story/events');
+};
+
 exports.create = (req,res)=>{
     let event = req.body;
     model.save(event);
-    res.redirect('/events');
+    res.redirect('./story/events');
 };
 
 exports.newEvent = (req,res)=>{
-    res.render('../story/newEvent', {id});
+    res.render('./story/newEvent');
 };
 
 exports.show = (req, res, next)=>{

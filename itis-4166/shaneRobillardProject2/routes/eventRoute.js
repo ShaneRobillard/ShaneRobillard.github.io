@@ -1,5 +1,6 @@
 const express = require('express');
 const controller = require('../controllers/eventController');
+const { route } = require('./mainRoute');
 const router = express.Router();
 
 router.use(function(err, req, res, next) {
@@ -8,11 +9,15 @@ router.use(function(err, req, res, next) {
     res.render('Error: ',{error:err,message:err.message,url:req.url});
   });
 
-router.get('/:id/edit', controller.edit);
+router.get('/', controller.index);
+
+router.get('/newEvent', controller.newEvent);
+
+router.get('/events', controller.index)
 
 router.get('/:id', controller.show);
 
-router.get('/:id', controller.newEvent);
+router.get('/:id/edit', controller.edit);
 
 router.post('/', controller.create);
 

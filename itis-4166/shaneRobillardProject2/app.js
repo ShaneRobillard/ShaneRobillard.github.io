@@ -19,10 +19,10 @@ app.use(express.urlencoded({extended: true}));
 app.use(morgan('tiny'));
 app.use(methodOverride('_method'));
 
-//set up routes
+/*set up routes
 app.get('/', (req, res)=>{
     res.render('index');
-});
+});*/
 
 app.use('/', mainRoute);
 app.use('/events', eventRoute);
