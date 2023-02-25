@@ -9,11 +9,9 @@ router.use(function(err, req, res, next) {
     res.render('Error: ',{error:err,message:err.message,url:req.url});
   });
 
-router.get('/', controller.index);
-
 router.get('/newEvent', controller.newEvent);
 
-router.get('/events', controller.index)
+router.get('/', controller.index)
 
 router.get('/:id', controller.show);
 
