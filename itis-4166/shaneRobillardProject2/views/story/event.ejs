@@ -1,7 +1,13 @@
 <%- include('../partials/header.ejs')%>
 <main>
     <div class="body">
-        <h2><%= event.title%></h2>&nbsp;<input type="image" alt="edit" src="/images/edit.png" formmethod="GET" formaction="/event/<%= event.id%>/edit">&nbsp;<input type="image" alt="delete" src="/images/delete.png" formmethod="POST" formaction="/event/<%= event.id%>?_method=DELETE"><br>
+        <div class="editform">
+            <h2><%= event.title%></h2>&nbsp;
+            <form class="editform1">
+                <input type="image" alt="edit" src="/images/edit.png" formmethod="GET" formaction="/event/<%= event.id%>/edit">
+                <input type="image" alt="delete" src="/images/delete.png" formmethod="POST" formaction="/event/<%= event.id%>?_method=DELETE">
+            </form>
+        </div>
         <img class="events" src="<%= event.image%>" alt="events">
         <h3>Host: </h3><p><%= event.hostName%></p><br>
         <h3>Start Time:</h3><p><%= event.startTime%></p><br>

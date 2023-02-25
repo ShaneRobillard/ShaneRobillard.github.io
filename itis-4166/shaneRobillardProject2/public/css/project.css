@@ -141,3 +141,11 @@ input[type=submit] {
     text-decoration-line: none;
     background-color: white;
 }
+
+.editform {
+    display:flex;
+}
+
+.editform1 {
+    display: inline-block;
+}
