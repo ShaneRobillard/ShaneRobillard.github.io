@@ -1,18 +1,34 @@
 <%- include('../partials/header.ejs')%>
 <main>
     <div class="body">
-        <h2><%= event.category%></h2>
+       <!--  <h2><%= events.category%></h2>
         <ul class="links">
-            <li><a href="<%= event.id>"><%= event.title%> - <%= event.date%></a></li>
-            <li><a href="<%= event.id"><%= event.title%> - <%= event.date%></a></li>
-            <li><a href="<%= event.id"><%= event.title%> - <%= event.date%></a></li>
+            <li><a href="<%= events.id%>"><%= events.title%> - <%= events.start%></a></li>
+            <li><a href="<%= events.id%>"><%= events.title%> - <%= events.start%></a></li>
+            <li><a href="<%= events.id%>"><%= events.title%> - <%= events.start%></a></li>
         </ul>
-        <h2><%= event.category%></h2>
+        <h2><%= events.category%></h2>
         <ul class="links">    
-            <li><a href="<%= event.id"><%= event.title%> - <%= event.date%>h</a></li>
-            <li><a href="<%= event.id"><%= event.title%> - <%= event.date%></a></li>
-            <li><a href="<%= event.id"><%= event.title%> - <%= event.date%></a></li>
-        </ul>
+            <li><a href="<%= events.id%>"><%= events.title%> - <%= events.start%></a></li>
+            <li><a href="<%= events.id%>"><%= events.title%> - <%= events.start%></a></li>
+            <li><a href="<%= events.id%>"><%= events.title%> - <%= events.start%></a></li>
+        </ul> -->
+        <%if(events.length){%>
+			<% categories.forEach(category=> {%>
+				<h4><%= category%></h4>
+				<div class = 'content-category'>
+					<%events.forEach(event=>{%>
+						<% if(event.category === category) {%>
+							<div id="event-img"><a href = '/events/<%= event.id%>'><img src="<%=event.img%>"></a></div>
+							<a href = '/events/<%= event.id%>'><p><%=event.title%></p></a>
+						<%}%>
+					<%})%>
+				</div>
+			<%})%>
+		<%}
+		else {%>
+			<p>There are no products to display.</p>
+		<%}%>
     </div>
 </main>
 <%- include('../partials/footer.ejs')%>
