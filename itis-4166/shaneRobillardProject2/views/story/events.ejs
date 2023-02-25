@@ -14,14 +14,12 @@
             <li><a href="<%= events.id%>"><%= events.title%> - <%= events.start%></a></li>
         </ul> -->
         <%if(events.length){%>
-			<% categories.forEach(category=> {%>
+			<% categories.forEach(category=>{%>
 				<h4><%= category%></h4>
-				<div class = 'content-category'>
+				<div class = 'links'>
 					<%events.forEach(event=>{%>
 						<% if(event.category === category) {%>
-							<a href="/event/<%= event.id%>"><%= event.title%> - <%= event.startTime%></a>
-                            <a href="/event/<%= event.id%>"><%= event.title%> - <%= event.startTime%></a>
-                            <a href="/event/<%= event.id%>"><%= event.title%> - <%= event.startTime%></a>
+							<a href="/event/<%= event.id%>"><%= event.title%> - <%= event.startTime%></a><br>
 						<%}%>
 					<%})%>
 				</div>

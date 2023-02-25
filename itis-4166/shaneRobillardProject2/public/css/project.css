@@ -55,17 +55,12 @@ footer {
     height: 600px;
 }
 
-li {
-    padding-left: 20px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    list-style-type: none;
-    color: black;
-}
-
-.links > li > a{
+.links > a{
     color: black;
     background-color: white;
+    padding-left: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 h2,h2+span {
