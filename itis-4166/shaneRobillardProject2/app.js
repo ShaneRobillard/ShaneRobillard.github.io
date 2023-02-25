@@ -26,6 +26,7 @@ app.get('/', (req, res)=>{
 
 app.use('/', mainRoute);
 app.use('/events', eventRoute);
+app.use('/event', eventRoute);
 
 app.use((req, res, next)=>{
     let err = new Error('The server cannot locate ' + req.url);

@@ -19,8 +19,9 @@
 				<div class = 'content-category'>
 					<%events.forEach(event=>{%>
 						<% if(event.category === category) {%>
-							<div id="event-img"><a href = '/events/<%= event.id%>'><img src="<%=event.img%>"></a></div>
-							<a href = '/events/<%= event.id%>'><p><%=event.title%></p></a>
+							<a href="/event/<%= event.id%>"><%= event.title%> - <%= event.startTime%></a>
+                            <a href="/event/<%= event.id%>"><%= event.title%> - <%= event.startTime%></a>
+                            <a href="/event/<%= event.id%>"><%= event.title%> - <%= event.startTime%></a>
 						<%}%>
 					<%})%>
 				</div>

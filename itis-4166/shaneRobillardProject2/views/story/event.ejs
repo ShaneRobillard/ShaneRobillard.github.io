@@ -1,12 +1,12 @@
 <%- include('../partials/header.ejs')%>
 <main>
     <div class="body">
-        <h2><%= events.title%></h2>&nbsp;<a href="edit"><img src="/images/edit.png"></a>&nbsp;<img src="/images/delete.png"><br>
-        <img class="events" src="<%= events.img%>" alt="events">
-        <h3>Host: </h3><p><%= events.hostName%></p><br>
-        <h3>Date and Time: </h3><p><%= events.start%></p><br>
-        <h3>Location: </h3><p><%= events.location%></p><br>
-        <h3>Details: </h3><p><%= events.details%></p>
+        <h2><%= event.title%></h2>&nbsp;<input type="image" alt="edit" src="/images/edit.png" formmethod="GET" formaction="/event/<%= event.id%>/edit">&nbsp;<input type="image" alt="delete" src="/images/delete.png" formmethod="POST" formaction="/event/<%= event.id%>?_method=DELETE"><br>
+        <img class="events" src="<%= event.image%>" alt="events">
+        <h3>Host: </h3><p><%= event.hostName%></p><br>
+        <h3>Date and Time: </h3><p><%= event.start%></p><br>
+        <h3>Location: </h3><p><%= event.location%></p><br>
+        <h3>Details: </h3><p><%= event.details%></p>
     </div>
 </main>
 <%- include('../partials/footer.ejs')%>

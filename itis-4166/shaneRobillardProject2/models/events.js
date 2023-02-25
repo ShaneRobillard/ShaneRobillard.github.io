@@ -10,7 +10,7 @@ const events = [
     endTime: 'April 22nd, 2023, 11pm',
     location: 'Blue Wolf Observatory',
     details: 'Come and join us in watching the Lyrids Meteor Showers.',
-    image: '../../public/images/meteorshower.jpg'
+    image: '/images/meteorshower.jpg'
 },
 {
     id: '2',
@@ -21,7 +21,7 @@ const events = [
     endTime: 'April 21st, 2023, 11pm',
     location: 'Blue Wolf Observatory',
     details: 'Join us as we use the Observatory to peer into the heavens.',
-    image: '../../public/images/observatory.jpg'
+    image: '/images/observatory.jpg'
 },
 {
     id: '3',
@@ -32,7 +32,7 @@ const events = [
     endTime: 'April 20th, 2023, 11pm',
     location: 'Blue Wolf Observatory',
     details: 'This party is for newcomers to socialize and learn from our more experienced members. ',
-    image: '../../public/images/starparty.jpg'
+    image: '/images/starparty.jpg'
 },
 {
     id: '4',
@@ -43,7 +43,7 @@ const events = [
     endTime: 'April 22nd, 2023, 5pm',
     location: 'Blue Wolf Classroom',
     details: 'This class is for beginners to learn about how telescopes work.',
-    image: '../../public/images/telescope.jpg'
+    image: '/images/telescope.jpg'
 },
 {
     id: '5',
@@ -54,7 +54,7 @@ const events = [
     endTime: 'April 21st, 2023, 5pm',
     location: 'Blue Wolf Classroom',
     details: 'This class is designed to educate about what telescopes are out there to buy.',
-    image: '../../public/images/buyingtelescope.jpg'
+    image: '/images/buyingtelescope.jpg'
 },
 {
     id: '6',
@@ -65,7 +65,7 @@ const events = [
     endTime: 'April 20th, 2023, 5pm',
     location: 'Blue Wolf Classroom',
     details: 'This class is for those who wish to learn about the different types of star atlases, and how to read them.',
-    image: '../../public/images/staratlas.jpg'
+    image: '/images/staratlas.jpg'
 },
 ];
 
