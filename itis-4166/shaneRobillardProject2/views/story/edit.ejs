@@ -1,7 +1,7 @@
 <%- include('../partials/header.ejs')%>
 <main>
     <div class="body">
-        <form>
+        <form enctype="multipart/form-data">
             <label for="category" class="category">Category</label>
             <select name="category" id="category" class="category" required>
                 <option value="select">--Select A Category--</option>
@@ -20,12 +20,12 @@
             <label for="location">Where</label>
             <input type="text" id="location" name="location" placeholder="Location" required><br><br>
             <label for="start">Start</label>
-            <input type="datetime-local" id="start" name="start" required><br><br>
+            <input type="datetime-local" id="start" name="startTime" required><br><br>
             <label for="end">End</label>
-            <input type="datetime-local" id="end" name="end" required><br><br>
+            <input type="datetime-local" id="end" name="endTime" required><br><br>
             <label for="img">Image</label>
             <input type="file" id="img" name="img" accept="image/*" required><br><br>
-            <input type="submit" id="submit" value="Submit" formmethod="POST" formaction="/event/<%= event.id%>">
+            <input type="submit" id="submit" value="Submit" formmethod="POST" formaction="/events/<%= event.id%>?_method=PUT">
     </form>
     </div>
 </main>

@@ -88,9 +88,10 @@ exports.updateById = function(id, newEvent){
     let event = events.find(event=>event.id === id);
     if(event){
         event.title = newEvent.title;
+        event.category = newEvent.category;
         event.hostName = newEvent.hostName;
-        event.startTime = DateTime.fromISO(event.startTime).toLocaleString(DateTime.DATETIME_MED);
-        event.endTime = DateTime.fromISO(event.endTime).toLocaleString(DateTime.DATETIME_MED);
+        event.startTime = DateTime.fromISO(newEvent.startTime).toLocaleString(DateTime.DATETIME_MED);
+        event.endTime = DateTime.fromISO(newEvent.endTime).toLocaleString(DateTime.DATETIME_MED);
         event.location = newEvent.location;
         event.details = newEvent.details;
         event.image = newEvent.image;

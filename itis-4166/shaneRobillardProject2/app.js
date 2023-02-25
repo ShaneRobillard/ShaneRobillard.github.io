@@ -2,6 +2,7 @@
 const express = require('express');
 const morgan = require('morgan');
 const methodOverride = require('method-override');
+const multer = require('multer');
 const mainRoute = require('./routes/mainRoute');
 const eventRoute = require('./routes/eventRoute');
 
