@@ -2,9 +2,10 @@
 const express = require('express');
 const morgan = require('morgan');
 const methodOverride = require('method-override');
-const multer = require('multer');
 const mainRoute = require('./routes/mainRoute');
 const eventRoute = require('./routes/eventRoute');
+
+const {fileUpload} = require('./middleware/fileUpload');
 
 //create application
 const app = express();
@@ -24,6 +25,11 @@ app.use(methodOverride('_method'));
 app.get('/', (req, res)=>{
     res.render('index');
 });*/
+
+app.post('/', fileUpload, (req, res, next) => {
+    let image =  "./images/" + req.file.filename;
+    res.render('/event', {img});
+});
 
 app.use('/', mainRoute);
 app.use('/events', eventRoute);
