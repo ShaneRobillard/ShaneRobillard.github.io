@@ -2,6 +2,7 @@ const express = require('express');
 const controller = require('../controllers/eventController');
 const { route } = require('./mainRoute');
 const router = express.Router();
+const {fileUpload} = require('../middleware/fileUpload')
 
 router.use(function(err, req, res, next) {
     console.log('Error Handler');
@@ -17,9 +18,9 @@ router.get('/:id', controller.show);
 
 router.get('/:id/edit', controller.edit);
 
-router.post('/', controller.create);
+router.post('/', fileUpload, controller.create);
 
-router.put('/:id', controller.update);
+router.put('/:id', fileUpload, controller.update);
 
 router.delete('/:id', controller.delete);
 
