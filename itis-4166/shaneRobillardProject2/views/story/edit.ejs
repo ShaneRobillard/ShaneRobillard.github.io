@@ -24,7 +24,7 @@
             <label for="end">End</label>
             <input type="datetime-local" id="end" name="endTime" required><br><br>
             <label for="img">Image</label>
-            <input type="file" id="img" name="img" accept="image/*" formenctype="multipart/form-data" required><br><br>
+            <input type="file" id="img" name="image" accept="image/*" formenctype="multipart/form-data" required><br><br>
             <input type="submit" id="submit" value="Submit" formmethod="POST" formaction="/events/<%= event.id%>?_method=PUT">
     </form>
     </div>

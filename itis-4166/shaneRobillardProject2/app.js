@@ -4,7 +4,6 @@ const morgan = require('morgan');
 const methodOverride = require('method-override');
 const mainRoute = require('./routes/mainRoute');
 const eventRoute = require('./routes/eventRoute');
-
 const {fileUpload} = require('./middleware/fileUpload');
 
 //create application
