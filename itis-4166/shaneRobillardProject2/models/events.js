@@ -1,5 +1,6 @@
 const { v4: uuidv4 } = require('uuid');
 const { DateTime } = require("luxon");
+const { fileUpload } = require('../middleware/fileUpload');
 const events = [
 {
     id: '1',
@@ -77,14 +78,15 @@ exports.findById = function(id) {
     return events.find(story=>story.id === id);
 };
 
-exports.save = function(event){
+exports.save = function(event, image){
     event.id = uuidv4();
     event.startTime = DateTime.fromISO(event.startTime).toLocaleString(DateTime.DATETIME_MED);
     event.endTime = DateTime.fromISO(event.endTime).toLocaleString(DateTime.DATETIME_MED);
+    event.image = image;
     events.push(event);
 };
 
-exports.updateById = function(id, newEvent){
+exports.updateById = function(id, image, newEvent){
     let event = events.find(event=>event.id === id);
     if(event){
         event.title = newEvent.title;
@@ -94,7 +96,7 @@ exports.updateById = function(id, newEvent){
         event.endTime = DateTime.fromISO(newEvent.endTime).toLocaleString(DateTime.DATETIME_MED);
         event.location = newEvent.location;
         event.details = newEvent.details;
-        event.image = newEvent.image;
+        event.image = image;
         return true;
     } else {
         return false;

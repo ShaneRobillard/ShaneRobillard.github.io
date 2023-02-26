@@ -38,7 +38,7 @@ exports.show = (req, res, next)=>{
 exports.edit = (req, res, next)=>{
     let id = req.params.id;
     let event = model.findById(id);
-    if(event) {
+    if(event) {    
         res.render('./story/edit', {event});
     } else {
         let err = new Error('Cannot find an event with id ' + id);
@@ -50,7 +50,8 @@ exports.edit = (req, res, next)=>{
 exports.update = (req, res, next)=>{
     let event = req.body;
     let id = req.params.id;
-    if (model.updateById(id, event)) {
+    if (model.updateById(id, event, image)) {
+        let image = "/images/" + req.file.filename;
         res.redirect('/event/'+id);
     } else {
         let err = new Error('Cannot find an event with id ' + id);
