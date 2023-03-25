@@ -1,0 +1,33 @@
+<%- include('../partials/header.ejs')%>
+<main>
+    <div class="body">
+       <!--  <h2><%= events.category%></h2>
+        <ul class="links">
+            <li><a href="<%= events.id%>"><%= events.title%> - <%= events.start%></a></li>
+            <li><a href="<%= events.id%>"><%= events.title%> - <%= events.start%></a></li>
+            <li><a href="<%= events.id%>"><%= events.title%> - <%= events.start%></a></li>
+        </ul>
+        <h2><%= events.category%></h2>
+        <ul class="links">    
+            <li><a href="<%= events.id%>"><%= events.title%> - <%= events.start%></a></li>
+            <li><a href="<%= events.id%>"><%= events.title%> - <%= events.start%></a></li>
+            <li><a href="<%= events.id%>"><%= events.title%> - <%= events.start%></a></li>
+        </ul> -->
+        <%if(events.length){%>
+			<% categories.forEach(category=>{%>
+				<h4><%= category%></h4>
+				<div class = 'links'>
+					<%events.forEach(event=>{%>
+						<% if(event.category === category) {%>
+							<a href="/event/<%= event.id%>"><%= event.title%> - <%= event.startTime%></a><br>
+						<%}%>
+					<%})%>
+				</div>
+			<%})%>
+		<%}
+		else {%>
+			<p>There are no events to display.</p>
+		<%}%>
+    </div>
+</main>
+<%- include('../partials/footer.ejs')%>

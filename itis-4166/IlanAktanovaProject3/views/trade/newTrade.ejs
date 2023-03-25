@@ -1,0 +1,54 @@
+<%- include('../partials/header.ejs')%>
+    <div class = "content">
+        <h2>Create a post</h2>
+        <div class="content-items">
+            <div class="content-form">
+                <form class="form-new">
+                    <table>
+                        <tr>
+                            <td class="align-top"><label for="name">Name</label></td>
+                            <td><input type="text" id="name" name="name" class="fixed-width" required></td>
+                        </tr>
+                        <tr>
+                            <td class="align-top"><label for="brand">Brand</label></td>
+                            <td><input type="text" id="brand" name="brand" class="fixed-width" required></td>
+                        </tr>
+                        <tr>
+                            <td class="align-top"><label for="category">Category</label></td>
+                            <td><input type="text" id="category" name="category" class="fixed-width" required></td>
+                        </tr>
+                        <tr>
+                            <td class="align-top"><label for="price">Price</label></td>
+                            <td><input type="number" step="0.01" id="price" name="price" class="fixed-width" required min="5" max="500"></td>
+                        </tr>
+                        <tr>
+                            <td class="align-top"><label for="status">Status</label></td>
+                            <td>
+                                <input type="radio" id="status_in" name="status" value="In Stock" checked required>
+                                <label for="In Stock">In Stock</label><br>
+                                <input type="radio" id="status_out" name="status" value="Out Of Stock" required>
+                                <label for="Out Of Stock">Out Of Stock</label><br>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="align-top"><label for="details">Details</label></td>
+                            <td><textarea rows="5" id="details" name="details" class="fixed-width" required minlength="10"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td class="align-top"><label for="img">Image File</label></td>
+                            <td><input type="file" id="img" name="img" class="fixed-width"></td>
+                        </tr>
+                        <tr class="tr-buttons">
+                            <td><a class="btn-link" href="/trades"><div class="formBtnLink">Cancel</div></a></td>
+                            <td><button type="submit" formmethod="POST" formaction="/trades">Post</button></td>        
+                        </tr>
+                    </table>
+                </form>
+            </div>
+            <div class="content-new-img">
+                <img src="../public/images_folder/opus-kore-logo.png" alt="new-post-img" /></div>
+            </div>
+        </div>
+
+    </div>
+<%- include('../partials/footer.ejs')%>

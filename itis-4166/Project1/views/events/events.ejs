@@ -1,0 +1,31 @@
+<!-- Jospeh Minton
+ITIS-4166-051 -->
+<%- include('../partials/header.ejs')%>
+
+
+    <main>
+        <div class="body">
+            <h1>Events</h1>
+            <hr>
+            <%if(events.length){%>
+                <% categories.forEach(category=>{%>
+                    <h4>
+                        <%= category%>
+                    </h4>
+                    <div class='links'>
+                        <%events.forEach(event=>{%>
+                            <% if(event.category===category) {%>
+                                <a href="/event/<%= event.id%>">
+                                    <%= event.title%> - <%= event.startTime%>
+                                </a><br>
+                                <%}%>
+                                    <%})%>
+                    </div>
+                    <%})%>
+                        <%} else {%>
+                            <p>There are no events to display.</p>
+                            <%}%>
+        </div>
+    </main>
+
+    <%- include('../partials/footer.ejs') %>

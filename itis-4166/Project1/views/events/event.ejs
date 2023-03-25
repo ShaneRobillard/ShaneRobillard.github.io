@@ -1,0 +1,64 @@
+<!-- Jospeh Minton
+ITIS-4166-051 -->
+<%- include('../partials/header.ejs')%>
+
+    <main>
+        <div class="body">
+            <div class="editform">
+                <h2>
+                    <%= event.title%>
+                </h2>&nbsp;
+                <form class="editform1">
+                    <input type="image" alt="edit" src="/images/edit.png" formmethod="GET"
+                        formaction="/event/<%= event.id%>/edit">
+                    <input type="image" alt="delete" src="/images/delete.png" formmethod="POST"
+                        formaction="/event/<%= event.id%>?_method=DELETE">
+                    <!-- <button class="button" type="submit" id="update" formmethod="GET" formaction="/event/<%= event.id%>/edit" >update</button> -->
+
+                </form>
+            </div>
+            <img class="eventspics" src="<%= event.image%>" alt="events" id="event-picture" width="244px"
+                height="180px">
+            <h3>Host: </h3>
+            <p>
+                <%= event.host%>
+            </p><br>
+            <h3><b>Date and time:</b>
+                <%=event.start%> -
+                    <%=event.end%>
+            </h3>
+            <!-- <h3>Start Time:</h3><p><%= event.start%></p><br>
+        <h3>End Time:</h3><p><%= event.end%></p><br> -->
+            <h3>Location: </h3>
+            <p>
+                <%= event.location%>
+            </p><br>
+            <h3>Details: </h3>
+            <p>
+                <%= event.details%>
+            </p>
+        </div>
+    </main>
+    <!-- <body>
+
+        <h1>Events</h1>
+
+        <hr>
+
+        <h1>Six Invitational Grandfinals</h1>
+        <section class="banner1">
+            <img src="img/siegeInvitational.png" alt="Inivitational">
+            <input type="submit" value="Edit">
+            <input type="submit" value="Delete">
+            <p><strong>Esports Watch Party</strong></p>
+            <p><strong>Host:</strong>Joseph Minton</p>
+            <p><strong>Date and Time:</strong>12PM 02/19/2023 to 5PM 02/19/2023</p>
+            <p><strong>Location:</strong>Student Union, Second Floor</p>
+            <p><strong>Details:</strong>Connect with other Rainbow Six Siege
+                esport and watch the Six Invitational Grand Final!</p>
+            <br>
+
+            <hr>
+
+    </body> -->
+    <%- include('../partials/footer.ejs') %>
