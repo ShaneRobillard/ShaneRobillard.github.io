@@ -1,81 +1,161 @@
 const model = require('../models/events')
 const { DateTime } = require("luxon");
 const { fileUpload } = require('../middleware/fileUpload');
+const {mongoose} = require('mongoose');
 
-exports.events = (req,res) => {
-    let events = model.find(); 
-    let catMap = events.map(event => event.category);
-    let categories = catMap.filter((c, index) => {
-        return catMap.indexOf(c) === index;
-    });
-    res.render('./story/events', {events, categories});
+const getDistinctCategories = () => {
+    return Event.distinct('category')
+      .then(categories => categories)
+      .catch(error => {
+        console.error(error);
+        throw new Error('Error retrieving categories');
+      });
+  };
+
+exports.index = () => {
+    return Event.find().lean()
+      .then(events => {
+        events.forEach(event => {
+          event.start = DateTime.fromJSDate(event.start).toISO({ includeOffset: true });
+          event.end = DateTime.fromJSDate(event.end).toISO({ includeOffset: true });
+        });
+        return getDistinctCategories()
+          .then(categories => {
+            return { events, categories };
+          })
+          .catch(error => {
+            console.error(error);
+            throw new Error('Error retrieving categories');
+          });
+      })
+      .catch(error => {
+        console.error(error);
+        throw new Error('Error retrieving events');
+      });
+  };
+
+exports.events = (req, res, next) => {
+    mongoose.model('event', 'eventSchema').find().lean()
+    .then(events=>{
+        const categories = {};
+        events.forEach((event) => {
+            if (event.category in categories) {
+                const events = categories[event.category];
+                events.push(event);
+                categories[event.category] = events;
+            }
+            else {
+                const event = [];
+                event.push(event);
+                categories[event.category] = event;
+            }
+        });
+        res.render("./story/events", {events, categories});
+    }) 
+    .catch(err=>next(err));
 };
 
 exports.newEvent = (req,res)=>{
     res.render('./story/newEvent');
 };
 
-exports.index = (req,res)=>{
-    res.render('./story/events');
-};
-
-exports.create = (req,res)=>{
-    let event = req.body;
+exports.create = (req,res,next)=>{
+    let event = new model(req.body);
     let image = "/images/" + req.body.image;
     event.image = image;
     event.start = new Date(event.startTime).toLocaleString(DateTime.DATETIME_MED);
     event.end = new Date(event.endTime).toLocaleString(DateTime.DATETIME_MED);
-    model.save(event);
-    res.redirect('/events');
+    event.save()
+    .then(event=>res.redirect('/events'))
+    .catch(err=> {
+        if(err.name==="ValidationError"){
+            err.status = 400;
+        }
+        next(err);
+    });
 };
 
 exports.show = (req, res, next)=>{
     let id = req.params.id;
-    let event = model.findById(id);
-    if(event) {
-        res.render('./story/event', {event});
-    } else {
-        let err = new Error('Cannot find an event with id ' + id);
-        err.status = 404;
-        next(err);
+    if(!id.match(/^[0-9a-fA-F]{24}$/)){
+        let err = new Error("Invalid event id");
+        err.status = 400;
+        return next(err);
     }
+    model.findById(id)
+    .then(event=>{
+        if(event) {
+            const startTime = new Date(event.start);
+            const endTime = new Date(event.end);
+            const formattedStart = state.toLocaleString();
+            const formattedEnd = state.toLocaleString();
+            return res.render('./story/events',{event});        
+        } else {
+            let err = new Error("Cannot find an event with id " + id);
+            err.status = 404;
+            next(err);
+        }
+    })
+    .catch(err=>next(err));
 };
 
 exports.edit = (req, res, next)=>{
     let id = req.params.id;
-    let event = model.findById(id);
-    if(event) {
-        res.render('./story/edit', {event});
-    } else {
-        let err = new Error('Cannot find an event with id ' + id);
-        err.status = 404;
-        next(err);
+    if(!id.match(/^[0-9a-fA-F]{24}$/)){
+        let err = new Error("Invalid event id");
+        err.status = 400;
+        return next(err);
     }
+    model.findById(id)
+    .then(event=>{
+        if(event) {
+            return res.render("./story/edit", {event});
+        } else {
+            let err = new Error("Cannot find an event with id " + id);
+            err.status = 404;
+            next(err);
+        }
+    })
+    .catch(err=>next(err));
 };
 
 exports.update = (req, res, next)=>{
     let event = req.body;
     let id = req.params.id;
-    let image = "/images/" + req.body.image;
-    event.image = image;
-    event.start = new Date(event.startTime).toLocaleString(DateTime.DATETIME_MED);
-    event.end = new Date(event.endTime).toLocaleString(DateTime.DATETIME_MED);
-    if (model.updateById(id, event)) {
-        res.redirect('/event/'+id);
-    } else {
-        let err = new Error('Cannot find an event with id ' + id);
-        err.status = 404;
-        next(err);
+    if(!id.match(/^[0-9a-fA-F]{24}$/)){
+        let err = new Error("Invalid event id");
+        err.status = 400;
+        return next(err);
     }
+    model.findByIdAndUpdate(id, event, {useFindAndModify: false})
+    .then(event =>{
+        if (event) {
+            res.redirect("/event/" + id);
+        } else {
+            let err = new Error("Cannot find a product with id " + id);
+            err.status = 404;
+            next(err);
+        }
+    })
+    .catch(err=>next(err));
 };
 
 exports.delete = (req, res, next)=>{
     let id = req.params.id;
-    if(model.deleteById(id)){
-        res.redirect('/events');
-    } else {
-        let err = new Error('Cannot find an event with id ' + id);
-        err.status = 404;
-        next(err);
+    if(!id.match(/^[0-9a-fA-F]{24}$/)){
+        let err = new Error("Invalid event id");
+        err.status = 400;
+        return next(err);
     }
+    model.findByIdAndDelete(id, {useFindAndModify: false})
+    .then(event=>{
+        if(event) {
+            res.redirect("/events");
+        } else {
+            let err = new Error("Cannot find an event with id " + id);
+            err.status = 404;
+            return next(err);
+        }
+    })    
+    .catch(err=>next(err));
 };

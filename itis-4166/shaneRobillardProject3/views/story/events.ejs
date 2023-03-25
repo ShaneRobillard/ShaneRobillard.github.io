@@ -1,33 +1,36 @@
 <%- include('../partials/header.ejs')%>
 <main>
     <div class="body">
-       <!--  <h2><%= events.category%></h2>
-        <ul class="links">
-            <li><a href="<%= events.id%>"><%= events.title%> - <%= events.start%></a></li>
-            <li><a href="<%= events.id%>"><%= events.title%> - <%= events.start%></a></li>
-            <li><a href="<%= events.id%>"><%= events.title%> - <%= events.start%></a></li>
-        </ul>
-        <h2><%= events.category%></h2>
-        <ul class="links">    
-            <li><a href="<%= events.id%>"><%= events.title%> - <%= events.start%></a></li>
-            <li><a href="<%= events.id%>"><%= events.title%> - <%= events.start%></a></li>
-            <li><a href="<%= events.id%>"><%= events.title%> - <%= events.start%></a></li>
-        </ul> -->
         <%if(events.length){%>
-			<% categories.forEach(category=>{%>
-				<h4><%= category%></h4>
-				<div class = 'links'>
-					<%events.forEach(event=>{%>
-						<% if(event.category === category) {%>
-							<a href="/event/<%= event.id%>"><%= event.title%> - <%= event.startTime%></a><br>
-						<%}%>
-					<%})%>
-				</div>
-			<%})%>
-		<%}
-		else {%>
-			<p>There are no events to display.</p>
-		<%}%>
+			<% ["Select Category", "Viewing Parties" , "Educational Classes" , "Club Meetings" , "Workshops"
+                    , "Other" ].forEach(category=> { %>
+                    <% const categoryEvents=events.filter(event=> event.category === category); %>
+                        <% if (categoryEvents.length) { %>
+                            <% if (category==="Select Category" ) { %>
+                                <h2>Select Category</h2>
+                                <% } else if (category==="Viewing Parties" ) { %>
+                                    <h2>Viewing Parties</h2>
+                                    <% } else if (category==="Educational Classes" ) { %>
+                                        <h2>Educational Classes</h2>
+                                        <% } else if (category==="Club Meetings" ) { %>
+                                            <h2>Club Meetings</h2>
+											<% } else if (category==="Workshops" ) { %>
+                                                <h2>Workshops</h2>
+                                                <% } else if (category==="Other" ) { %>
+                                                    <h2>Other</h2>
+                                                    <% } %>
+                                                        <ul>
+                                                            <% categoryEvents.forEach(event=> { %>
+                                                                <li>
+																	<a href="/event/<%= event.id%>"><%= event.title%> - <%= event.startTime%></a><br>
+                                                                </li>
+                                                                <% }) %>
+                                                        </ul>
+                            <% } %>
+            <% }) %>
+        <% } else { %>
+            <p>There are no events to display</p>
+        <% } %>
     </div>
 </main>
 <%- include('../partials/footer.ejs')%>
