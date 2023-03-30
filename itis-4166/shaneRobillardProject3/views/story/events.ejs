@@ -19,13 +19,11 @@
                                                 <% } else if (category==="Other" ) { %>
                                                     <h2>Other</h2>
                                                     <% } %>
-                                                        <ul>
-                                                            <% categoryEvents.forEach(event=> { %>
-                                                                <li>
+													<div class = 'links'>
+                                                        <% categoryEvents.forEach(event=> { %>
 																	<a href="/event/<%= event.id%>"><%= event.title%> - <%= event.startTime%></a><br>
-                                                                </li>
-                                                                <% }) %>
-                                                        </ul>
+                                                    	<% }) %>
+													</div>
                             <% } %>
             <% }) %>
         <% } else { %>

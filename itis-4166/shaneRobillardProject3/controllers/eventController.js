@@ -16,8 +16,8 @@ exports.index = () => {
     return Event.find().lean()
       .then(events => {
         events.forEach(event => {
-          event.start = DateTime.fromJSDate(event.start).toISO({ includeOffset: true });
-          event.end = DateTime.fromJSDate(event.end).toISO({ includeOffset: true });
+          event.startTime = DateTime.fromJSDate(event.startTime).toISO({includeOffset: false, format: 'basic'});
+          event.endTime = DateTime.fromJSDate(event.endTime).toISO({includeOffset: false, format: 'basic'});
         });
         return getDistinctCategories()
           .then(categories => {
@@ -35,7 +35,7 @@ exports.index = () => {
   };
 
 exports.events = (req, res, next) => {
-    mongoose.model('event', 'eventSchema').find().lean()
+    let events = model.find()
     .then(events=>{
         const categories = {};
         events.forEach((event) => {
@@ -63,8 +63,8 @@ exports.create = (req,res,next)=>{
     let event = new model(req.body);
     let image = "/images/" + req.body.image;
     event.image = image;
-    event.start = new Date(event.startTime).toLocaleString(DateTime.DATETIME_MED);
-    event.end = new Date(event.endTime).toLocaleString(DateTime.DATETIME_MED);
+    event.startTime = new Date(event.startTime).toLocaleString(DateTime.DATETIME_MED);
+    event.endTime = new Date(event.endTime).toLocaleString(DateTime.DATETIME_MED);
     event.save()
     .then(event=>res.redirect('/events'))
     .catch(err=> {
@@ -83,13 +83,13 @@ exports.show = (req, res, next)=>{
         return next(err);
     }
     model.findById(id)
-    .then(event=>{
-        if(event) {
-            const startTime = new Date(event.start);
-            const endTime = new Date(event.end);
-            const formattedStart = state.toLocaleString();
-            const formattedEnd = state.toLocaleString();
-            return res.render('./story/events',{event});        
+    .then(events=>{
+        if(events) {
+            const startTime = new Date(events.startTime);
+            const endTime = new Date(events.endTime);
+            const formattedStart = startTime.toLocaleString();
+            const formattedEnd = endTime.toLocaleString();
+            return res.render('./story/event',{events, formattedStart, formattedEnd});        
         } else {
             let err = new Error("Cannot find an event with id " + id);
             err.status = 404;
@@ -100,7 +100,10 @@ exports.show = (req, res, next)=>{
 };
 
 exports.edit = (req, res, next)=>{
+    let event = req.body;
     let id = req.params.id;
+    let image = "/images/" + req.body.image;
+    event.image = image;
     if(!id.match(/^[0-9a-fA-F]{24}$/)){
         let err = new Error("Invalid event id");
         err.status = 400;
@@ -122,6 +125,8 @@ exports.edit = (req, res, next)=>{
 exports.update = (req, res, next)=>{
     let event = req.body;
     let id = req.params.id;
+    let image = "/images/" + req.body.image;
+    event.image = image;
     if(!id.match(/^[0-9a-fA-F]{24}$/)){
         let err = new Error("Invalid event id");
         err.status = 400;

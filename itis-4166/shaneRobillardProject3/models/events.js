@@ -13,6 +13,6 @@ const eventSchema = new Schema({
     image: {type: String, required: [true, "Image is required"]}
 });
 
-const event = mongoose.model('event',eventSchema);
+const events = mongoose.model('events',eventSchema);
 
-module.exports = event;
+module.exports = events;
