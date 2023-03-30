@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/style.css">
     <title>
         Log In
     </title>
@@ -16,3 +17,15 @@
         <a href='/profile'>Profile</a>
         <a href='/logout'>Logout</a>
     </nav>
+
+    <%if(errorMessages.length > 0) {
+        errorMessages.forEach(message=>{%>
+            <div class='error'><%=message%></div>
+      <%  });
+    }%>
+
+    <%if(successMessages.length > 0) {
+        successMessages.forEach(message=>{%>
+            <div class='success'><%=message%></div>
+      <%  });
+    }%>
