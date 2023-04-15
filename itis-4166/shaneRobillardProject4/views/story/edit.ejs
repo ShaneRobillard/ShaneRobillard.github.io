@@ -1,0 +1,32 @@
+<%- include('../partials/header.ejs')%>
+<main>
+    <div class="body">
+        <form>
+            <label for="category" class="category">Category</label>
+            <select name="category" id="category" class="category" required>
+                <option value="<%= event.category%>"><%= event.category%></option>
+                <option value="Viewing Parties">Viewing Parties</option>
+                <option value="Educational Classes">Educational Classes</option>
+                <option value="Club Meetings">Club Meetings</option>
+                <option value="Workshops">Workshops</option>
+                <option value="Other">Other</option>
+            </select>
+            <label for="title">Title</label>
+            <input type="text" id="title" name="title" placeholder="Title" value="<%= event.title%>" required><br><br>
+            <label for="hostName">Host Name</label>
+            <input type="text" id="hostName" name="hostName" placeholder="Host Name" value="<%= event.hostName%>" required><br><br>
+            <label for="details">Details</label>
+            <input type="text" id="details" name="details" placeholder="Description" value="<%= event.details%>" required><br><br>
+            <label for="location">Where</label>
+            <input type="text" id="location" name="location" placeholder="Location" value="<%= event.location%>" required><br><br>
+            <label for="start">Start</label>
+            <input type="datetime-local" id="start" name="startTime" value="<%= event.startTime%>" required><br><br>
+            <label for="end">End</label>
+            <input type="datetime-local" id="end" name="endTime" value="<%= event.endTime%>" required><br><br>
+            <label for="image">Image</label>
+            <input type="file" id="img" name="image" accept="image/*" formenctype="multipart/form-data" required><br><br>
+            <input type="submit" id="submit" value="Submit" formmethod="POST" formaction="/events/<%= event.id%>?_method=PUT">
+    </form>
+    </div>
+</main>
+<%- include('../partials/footer.ejs')%>

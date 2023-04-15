@@ -1,0 +1,115 @@
+[{
+  "_id": {
+    "$oid": "638430f7239ce25404971df1"
+  },
+  "name": "Le Acque Oscure",
+  "category": "Serum",
+  "price": 23.99,
+  "status": "In Stock",
+  "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec hendrerit sem at scelerisque congue. Interdum et malesuada fames ac ante ipsum primis in faucibus.",
+  "img": "/public/images_folder/item_3.jpg",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1669607671657"
+    }
+  },
+  "brand": {
+    "$oid": "63842eeb239ce25404971ddd"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6384311a239ce25404971df4"
+  },
+  "name": "Caudalie",
+  "category": "Serum",
+  "price": 21.99,
+  "status": "In Stock",
+  "details": "Aliquam mauris massa, viverra ac turpis sed, consectetur laoreet tortor. Suspendisse vehicula felis ante, ut viverra leo aliquam.",
+  "img": "/public/images_folder/item_4.jpg",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1669607706972"
+    }
+  },
+  "brand": {
+    "$oid": "63842eeb239ce25404971ddd"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63843137239ce25404971df7"
+  },
+  "name": "White Orchid",
+  "category": "Serum",
+  "price": 24.99,
+  "status": "In Stock",
+  "details": "Fusce vel erat ut metus mattis varius et vel neque. Nulla laoreet efficitur dolor at faucibus. Interdum et malesuada fames ac ante ipsum primis in faucibus.",
+  "img": "/public/images_folder/item_5.jpg",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1669607735721"
+    }
+  },
+  "brand": {
+    "$oid": "63842eeb239ce25404971ddd"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "638433b5239ce25404971e21"
+  },
+  "name": "Lily and Peaches",
+  "category": "Essence ",
+  "price": 36,
+  "status": "In Stock",
+  "details": "Nulla id vulputate magna. Nulla sagittis commodo arcu, quis luctus nibh luctus vel. Ut euismod est non interdum gravida.",
+  "img": "/public/images_folder/item_6.jpg",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1669608373119"
+    }
+  },
+  "brand": {
+    "$oid": "63843373239ce25404971e1b"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "638433c2239ce25404971e24"
+  },
+  "name": "A Lilac a Day",
+  "category": "Essence ",
+  "price": 31,
+  "status": "In Stock",
+  "details": "Proin ornare lectus massa, in lacinia nibh ultrices eget. Suspendisse sit amet imperdiet erat. Curabitur interdum efficitur dolor eget tristique.",
+  "img": "/public/images_folder/item_7.jpg",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1669608386974"
+    }
+  },
+  "brand": {
+    "$oid": "63843373239ce25404971e1b"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "638433d1239ce25404971e27"
+  },
+  "name": "White Rose",
+  "category": "Essence ",
+  "price": 159,
+  "status": "Out Of Stock",
+  "details": "Cras interdum felis id vulputate ultricies. Curabitur hendrerit felis a ex vulputate aliquam. Phasellus tortor nisl, tincidunt hendrerit velit sed, fringilla ultrices dolor.",
+  "img": "/public/images_folder/item_8.jpg",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1669608401754"
+    }
+  },
+  "brand": {
+    "$oid": "63843373239ce25404971e1b"
+  },
+  "__v": 0
+}]

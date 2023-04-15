@@ -1,0 +1,151 @@
+#logo {
+    width: 100px;
+    border: 3px solid black;
+    margin: 5px;
+}
+
+.header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}
+
+.topmenu {
+    text-align: right;
+    vertical-align:top;
+    padding: 5px;
+}
+
+.pages {
+    text-align: left;
+    border-top: 5px solid black;
+    padding: 5px;
+    margin: 5px 0px;
+}
+
+a:link, a:visited {
+    margin-right: 15px;
+    color: white;
+    text-decoration-line: none;
+  }
+
+a:hover{
+    color: white;
+    text-decoration-line: underline;
+    background-color: navy;
+}
+
+body {
+    background-color: navy;
+    margin: 0 0 0 0;
+}
+
+footer {
+    border-top: 5px solid black;
+    color: white;
+    padding-left: 5px;
+}
+
+.body {
+    width: auto;
+    background-color:#fff;
+    margin: auto;
+    text-align: left;
+    padding: 50px;
+    height: 600px;
+}
+
+.links > a{
+    color: black;
+    background-color: white;
+    padding-left: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+h2,h2+span {
+    display: inline-block;
+}
+
+h3,h3+p {
+    display: inline-block;
+}
+
+h3 {
+    margin-left: 30px;
+    padding: 0px;
+    line-height: 0.1em;
+}
+
+p {
+    margin-left: 5px;
+}
+
+.events {
+    width: 150px;
+    float: left;
+    padding-top: 57px;
+    padding-bottom: 70px;
+}
+
+form {
+    display: grid;
+    grid-template-columns: max-content auto;
+}
+
+label {
+    grid-column: 1/2;
+}
+
+input {
+    grid-column: 2/3;
+}
+
+form input, form select, form label {
+    margin: 5px;
+}
+
+.category {
+    margin-bottom: 30px;
+}
+
+#details {
+    height: 100px;
+    width: 700px;
+    background-color: lightgrey;
+    border: none;
+    color: black;
+}
+
+#title, #category, #location, #start, #end, #hostName {
+    width: 700px;
+    background-color: lightgrey;
+    border: none;
+    color: black;
+}
+
+input[type=submit] {
+    background-color: navy;
+    color: white;
+    width: 700px;
+    height: 50px;
+}
+
+.social {
+    float: right;
+    margin-right: 30px;
+}
+
+#edit {
+    color: black;
+    text-decoration-line: none;
+    background-color: white;
+}
+
+.editform {
+    display:flex;
+}
+
+.editform1 {
+    display: inline-block;
+}

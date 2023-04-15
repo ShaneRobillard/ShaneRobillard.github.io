@@ -1,0 +1,24 @@
+<%- include('../partials/header.ejs')%>
+    <div class = "content">
+        <h2>All products</h2>
+		<%if(Object.keys(categories).length){%>
+			<% for (const [key, value] of Object.entries(categories)) {%>
+				<div class ='content-components'>
+					<h3><%=key%></h3>
+					<div class = 'category-row'>
+						<% value.forEach((val, ind) => {%>
+							<div class = "trade-component">
+								<div class = "trade-img"><a href = '/trades/<%= val._id%>'><img src="<%=val.img%>" alt="val-img"></a></div>
+								<a href = '/trades/<%= val._id%>'><p><%=val.name%></p></a>
+								<p>$<%=val.price%></p>
+							</div>
+						<%})%>
+					</div>
+				</div>
+			<%}%>
+		<%}
+		else {%>
+			<p>There are no products to display.</p>
+		<%}%>
+	</div>
+<%- include('../partials/footer.ejs')%>

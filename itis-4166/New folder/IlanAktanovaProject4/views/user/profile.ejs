@@ -1,0 +1,23 @@
+<%- include('../partials/header.ejs')%>
+    <div class = "content">
+        <h2>Welcome, <%=user.userName%></h2>
+        <%if(trades.length) {%>
+            <div class="posts">
+                <p>Your posts: </p>
+                <div class = 'category-row'>
+                    <%trades.forEach(trade => {%>
+                        <div class = "trade-component">
+                            <div class = "profile-posts-img"><a href = '/trades/<%= trade._id%>'><img src="<%=trade.img%>" alt="trade-img"></a></div>
+                            <a class="post-link" href = '/trades/<%= trade.id%>'><p><%=trade.name%></p></a>
+                            <p><%=trade.status%></p>
+                        </div>
+                    <%})%>
+                </div>
+            </div>
+        <%} else {%>
+            <div class="posts">
+                <p>You have not posted anything yet </p>
+            </div>
+        <%}%>
+    </div>
+<%- include('../partials/footer.ejs')%>

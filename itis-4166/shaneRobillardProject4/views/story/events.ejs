@@ -1,0 +1,34 @@
+<%- include('../partials/header.ejs')%>
+<main>
+    <div class="body">
+        <%if(events.length){%>
+			<% ["Select Category", "Viewing Parties" , "Educational Classes" , "Club Meetings" , "Workshops"
+                    , "Other" ].forEach(category=> { %>
+                    <% const categoryEvents=events.filter(event=> event.category === category); %>
+                        <% if (categoryEvents.length) { %>
+                            <% if (category==="Select Category" ) { %>
+                                <h2>Select Category</h2>
+                                <% } else if (category==="Viewing Parties" ) { %>
+                                    <h2>Viewing Parties</h2>
+                                    <% } else if (category==="Educational Classes" ) { %>
+                                        <h2>Educational Classes</h2>
+                                        <% } else if (category==="Club Meetings" ) { %>
+                                            <h2>Club Meetings</h2>
+											<% } else if (category==="Workshops" ) { %>
+                                                <h2>Workshops</h2>
+                                                <% } else if (category==="Other" ) { %>
+                                                    <h2>Other</h2>
+                                                    <% } %>
+													<div class = 'links'>
+                                                        <% categoryEvents.forEach(event=> { %>
+																	<a href="/event/<%= event.id%>"><%= event.title%> - <%= event.startTime%></a><br>
+                                                    	<% }) %>
+													</div>
+                            <% } %>
+            <% }) %>
+        <% } else { %>
+            <p>There are no events to display</p>
+        <% } %>
+    </div>
+</main>
+<%- include('../partials/footer.ejs')%>

@@ -1,0 +1,11 @@
+firstName: Lilly 
+lastName:  Marbel
+userName:  Marbel Lilly
+email:     lilly@marbellilly.com
+password:  MarbelLilly 
+
+firstName: Umbrella 
+lastName:  Ucorp 
+userName:  Umbrella Pharmaceuticals 
+email:     pharma@umbrella.com
+password:  Umbrella 
