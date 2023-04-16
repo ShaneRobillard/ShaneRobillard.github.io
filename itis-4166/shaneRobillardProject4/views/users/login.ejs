@@ -1,0 +1,15 @@
+<%- include('../partials/header.ejs')%>
+<main>
+    <div class="body">
+        <h2>User Login</h2>
+        <form>
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="Email" required>
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Password" required>
+            <input type="submit" id="submit" value="Submit" formmethod="POST" formaction="/users/login">
+        </form>
+        <h3>Don't have an account? <a class="signup" href="signup.ejs">Sign Up Here!</a></h3>
+    </div>
+</main>
+<%- include('../partials/footer.ejs')%>

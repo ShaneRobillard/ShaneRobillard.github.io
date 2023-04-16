@@ -7,6 +7,9 @@ const eventRoute = require('./routes/eventRoute');
 const userRoute = require('./routes/userRoute')
 const {fileUpload} = require('./middleware/fileUpload');
 const mongoose = require('mongoose');
+const session = require('express-session');
+const MongoStore = require('connect-mongo');
+const flash = require('connect-flash');
 
 //create application
 const app = express();
@@ -17,6 +20,17 @@ let host = 'localhost';
 app.set('view engine', 'ejs');
 
 //mount middleware
+app.use(
+    session({
+        secret: "ajfeirf90aeu9eroejfoefj",
+        resave: false,
+        saveUninitialized: false,
+        store: new MongoStore({mongoUrl: 'mongodb://0.0.0.0/demos'}),
+        cookie: {maxAge: 60*60*1000}
+        })
+);
+app.use(flash());
+
 app.use(express.static('public'));
 app.use(express.urlencoded({extended: true}));
 app.use(morgan('tiny'));
@@ -35,9 +49,17 @@ mongoose.connect("mongodb+srv://project3:project3@project3.mfqxboe.mongodb.net/n
 })
 .catch(err=>console.log(err.message));
 
+app.use((req, res, next) => {
+    res.locals.user = req.session.user||null;
+    res.locals.errorMessages = req.flash('error');
+    res.locals.successMessages = req.flash('success');
+    next();
+});
+
 app.use('/', mainRoute);
 app.use('/events', eventRoute);
 app.use('/event', eventRoute);
+app.use('/users', userRoute);
 
 app.use((req, res, next)=>{
     let err = new Error('The server cannot locate ' + req.url);

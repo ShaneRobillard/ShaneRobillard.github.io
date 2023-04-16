@@ -1,0 +1,61 @@
+<%- include('../partials/header.ejs')%>
+
+  <title>Edit event</title>
+
+  <main class="package">
+    <form method="POST" enctype="multipart/form-data" action="/events/<%= event.id%>?_method=PUT" <div class="body">
+      <label for="category" class="category">Category</label>
+      <select name="category" id="category" class="category" required>
+        <option value="<%= event.category%>">
+          <%= event.category%>
+        </option>
+        <option value="Looking for Team Center">Looking for Team Center</option>
+        <option value="Esport Watch Party">Esport Watch Party</option>
+        <option value="Meet And Greet">Meet And Greet</option>
+        <option value="Coaching">Coaching</option>
+        <option value="Compete">Compete</option>
+      </select>
+
+      <label for="title">Title:</label>
+      <input type="text" id="title" name="title" placeholder="Title" value="<%= event.title %>" required>
+
+      <br><br>
+
+      <label for="details">Details:</label>
+      <input type="text" id="details" name="details" placeholder="Description" value="<%= event.details %>" required>
+
+      <br><br>
+
+      <label for="location">Location:</label>
+      <input type="text" id="location" name="location" placeholder="Location" value="<%= event.location %>" required>
+
+      <br><br>
+
+      <label for="startDateTime">Start:<%= formattedStart %></label>
+      <input type="datetime-local" id="start" name="start" value="<%= formattedStart %>" required>
+
+      <br><br>
+
+      <label for="endDateTime">End:<%= formattedEnd %></label>
+      <input type="datetime-local" id="end" name="end" value="<%= formattedEnd %>" required>
+
+      <!-- <label for="startDateTime">Start:<%= event.start %></label>
+      <input type="datetime-local" id="start" name="start" value="<%=event.start %>" required>
+
+      <br><br>
+
+      <label for="endDateTime">End:<%= event.end %></label>
+      <input type="datetime-local" id="end" name="end" value="<%= event.end %>" required> -->
+
+      <br><br>
+
+      <label for="image">Image</label>
+      <input type="file" id="image" name="image" accept="image/jpeg, image/png, image/svg" required>
+
+      <br><br>
+
+      <button type="submit" id="submit" value="Submit">Save Changes </button>
+    </form>
+    </div>
+  </main>
+  <%- include('../partials/footer.ejs') %>

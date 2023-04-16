@@ -1,0 +1,24 @@
+<%- include('../partials/header.ejs')%>
+<main>
+    <div class="body">
+        <h2>Welcome, <%=user.firstName%> <%=user.lastName%></h2>
+        <ul id="events">
+            <%if(events.length){%>
+            <%user.events.forEach(event=>{%>
+                <%if(event.author._id === user._id){%>
+                <li>
+                    <h2><%=event.title%></h2>&nbsp;
+                    <form class="editform1">
+                        <input type="image" alt="edit" src="/images/edit.png" formmethod="GET" formaction="/event/<%= events.id%>/edit">
+                        <input type="image" alt="delete" src="/images/delete.png" formmethod="POST" formaction="/event/<%= events.id%>?_method=DELETE">
+                    </form>
+                </li>
+                <%}%>
+            <%});%>
+            <%}else{%>
+                <p>You have no events to display.</p>
+            <%}%>
+        </ul>
+    </div>
+</main>
+<%- include('../partials/footer.ejs')%>

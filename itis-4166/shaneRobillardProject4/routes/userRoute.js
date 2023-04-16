@@ -1,6 +1,6 @@
 const express = require('express');
 const userController = require('../controllers/userController');
-const {isGuest, isLoggedIn} = require('../middleware/validator');
+const {isGuest, isLoggedIn} = require('../middleware/auth');
 const router = express.Router();
 
 router.use(function(err, req, res, next) {

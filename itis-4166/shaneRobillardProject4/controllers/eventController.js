@@ -65,6 +65,7 @@ exports.create = (req,res,next)=>{
     event.image = image;
     event.startTime = new Date(event.startTime).toLocaleString(DateTime.DATETIME_MED);
     event.endTime = new Date(event.endTime).toLocaleString(DateTime.DATETIME_MED);
+    event.createdBy = req.user._id;
     event.save()
     .then(event=>res.redirect('/events'))
     .catch(err=> {

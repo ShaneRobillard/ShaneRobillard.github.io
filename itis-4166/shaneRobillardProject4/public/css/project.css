@@ -149,3 +149,8 @@ input[type=submit] {
 .editform1 {
     display: inline-block;
 }
+
+.signup:visited, .signup:link {
+    color: black;
+    background-color: white;
+}

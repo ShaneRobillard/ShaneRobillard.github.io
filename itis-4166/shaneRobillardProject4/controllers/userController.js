@@ -1,34 +1,31 @@
 const userModel = require('../models/user');
-const itemModel = require('../models/events');
+const eventModel = require('../models/events');
 
 
 exports.signup = (req, res)=>{
-    return res.render('./story/signup');
+    return res.render('./users/signup');
 };
-
 
 exports.create = (req, res, next)=>{
     let user = new userModel(req.body);              
     user.save()                                     
-    .then(user=> res.redirect('/story/login'))
+    .then(user=> res.redirect('/users/login'))
     .catch(err=>{
         if(err.name === 'ValidationError' ) {
             req.flash('error', err.message);  
-            return res.redirect('/story/signup');
+            return res.redirect('/users/signup');
         }
         if(err.code === 11000) {
             req.flash('error', 'Email has been used');  
-            return res.redirect('/story/signup');
+            return res.redirect('/users/signup');
         }
         next(err);
     }); 
 };
 
-
 exports.getUserLogin = (req, res, next) => {
-    return res.render('./story/login');
+    return res.render('./users/login');
 }
-
 
 exports.login = (req, res, next)=>{
     let email = req.body.email;
@@ -37,7 +34,7 @@ exports.login = (req, res, next)=>{
     .then(user => {
         if (!user) {
             req.flash('error', 'Wrong email address');  
-            res.redirect('/story/login');
+            res.redirect('/users/login');
         } 
         else {
             user.comparePassword(password)
@@ -45,11 +42,11 @@ exports.login = (req, res, next)=>{
                 if(result) {
                     req.session.user = user._id;
                     req.flash('success', 'You have successfully logged in');
-                    res.redirect('/story/profile');
+                    res.redirect('/users/profile');
                 } 
                 else {
                     req.flash('error', 'Wrong password');      
-                    res.redirect('/story/login');
+                    res.redirect('/users/login');
                 }
             });     
         }     
@@ -60,14 +57,13 @@ exports.login = (req, res, next)=>{
 
 exports.profile = (req, res, next)=>{
     let id = req.session.user;
-    Promise.all([userModel.findById(id), itemModel.find({brand: id})]) 
+    Promise.all([userModel.findById(id), eventModel.find({author: id})]) 
     .then(results=>{
-        const [user, trades] = results;
-        res.render('./story/profile', {user, trades});
+        const [user, events] = results;
+        res.render('./users/profile', {user, events});
     })
     .catch(err=>next(err));
 };
-
 
 exports.logout = (req, res, next)=>{
     req.session.destroy(err=>{

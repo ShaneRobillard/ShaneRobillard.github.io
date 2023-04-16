@@ -2,7 +2,9 @@ const express = require('express');
 const controller = require('../controllers/eventController');
 const { route } = require('./mainRoute');
 const router = express.Router();
-const {fileUpload} = require('../middleware/fileUpload')
+const {fileUpload} = require('../middleware/fileUpload');
+const {isAuthor, isLoggedIn} = require('../middleware/auth');
+const {validateId} =  require('../middleware/validator');
 
 router.use(function(err, req, res, next) {
     console.log('Error Handler');
@@ -12,16 +14,16 @@ router.use(function(err, req, res, next) {
 
 router.get('/', controller.events)
 
-router.get('/newEvent', controller.newEvent);
+router.get('/newEvent', isLoggedIn, controller.newEvent);
 
-router.get('/:id', controller.show);
+router.get('/:id', validateId, controller.show);
 
-router.get('/:id/edit', controller.edit);
+router.get('/:id/edit', isLoggedIn, isAuthor, validateId, controller.edit);
 
-router.post('/', fileUpload, controller.create);
+router.post('/', fileUpload, isLoggedIn, controller.create);
 
-router.put('/:id', fileUpload, controller.update);
+router.put('/:id', fileUpload, isLoggedIn, isAuthor, validateId, controller.update);
 
-router.delete('/:id', controller.delete);
+router.delete('/:id', isLoggedIn, isAuthor, validateId, controller.delete);
 
 module.exports = router;
