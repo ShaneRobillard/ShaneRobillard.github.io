@@ -5,7 +5,7 @@ const eventSchema = new Schema({
     category: {type: String, required: [true, "Category is required"], 
             enum: ["Viewing Parties","Educational Classes", "Club Meetings","Workshops","Other"]},
     title: {type: String, required: [true, "Title is required"]},
-    hostName: {type: Schema.Types.ObjectId, ref: 'User'},
+    author: {type: Schema.Types.ObjectId, ref: 'User'},
     startTime: {type: Date, required: [true, "StartTime is required"]},
     endTime: {type: Date, required: [true, "EndTime is required"]},
     location: {type: String, required: [true, "Location is required"]},

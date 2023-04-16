@@ -13,7 +13,8 @@ const getDistinctCategories = () => {
   };
 
 exports.index = () => {
-    return Event.find().lean()
+    let userId = req.session.user._id;
+    model.find({author: userId}).lean()
       .then(events => {
         events.forEach(event => {
           event.startTime = DateTime.fromJSDate(event.startTime).toISO({includeOffset: false, format: 'basic'});
@@ -35,8 +36,8 @@ exports.index = () => {
   };
 
 exports.events = (req, res, next) => {
-    let events = model.find()
-    .then(events=>{
+    let userId = req.session.user._id;
+    model.find({ author: userId }).then(events=>{
         const categories = {};
         events.forEach((event) => {
             if (event.category in categories) {
@@ -65,7 +66,7 @@ exports.create = (req,res,next)=>{
     event.image = image;
     event.startTime = new Date(event.startTime).toLocaleString(DateTime.DATETIME_MED);
     event.endTime = new Date(event.endTime).toLocaleString(DateTime.DATETIME_MED);
-    event.createdBy = req.user._id;
+    event.author = req.session.user;
     event.save()
     .then(event=>res.redirect('/events'))
     .catch(err=> {
@@ -83,7 +84,7 @@ exports.show = (req, res, next)=>{
         err.status = 400;
         return next(err);
     }
-    model.findById(id)
+    model.findById(id).populate('author', 'firstName')
     .then(events=>{
         if(events) {
             const startTime = new Date(events.startTime);
