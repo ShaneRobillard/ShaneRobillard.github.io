@@ -3,31 +3,29 @@ const { DateTime } = require("luxon");
 const { fileUpload } = require('../middleware/fileUpload');
 const {mongoose} = require('mongoose');
 
-const getDistinctCategories = () => {
-    return Event.distinct('category')
-      .then(categories => categories)
-      .catch(error => {
-        console.error(error);
-        throw new Error('Error retrieving categories');
-      });
-  };
-
-exports.index = () => {
-    let userId = req.session.user._id;
-    model.find({author: userId}).lean()
+exports.index = (req, res, next) => {
+    model.find()
       .then(events => {
-        events.forEach(event => {
+        /* events.forEach(event => {
           event.startTime = DateTime.fromJSDate(event.startTime).toISO({includeOffset: false, format: 'basic'});
           event.endTime = DateTime.fromJSDate(event.endTime).toISO({includeOffset: false, format: 'basic'});
+        }); */
+        model.distinct('category')
+        .then(categories =>{
+            res.render('./story/events', {events, categories});
+        })
+        .catch(error => {
+            console.error(error);
+            throw new Error('Error retrieving categories');
         });
-        return getDistinctCategories()
+       /*  return getDistinctCategories()
           .then(categories => {
             return { events, categories };
           })
           .catch(error => {
             console.error(error);
             throw new Error('Error retrieving categories');
-          });
+          }); */
       })
       .catch(error => {
         console.error(error);
@@ -79,11 +77,6 @@ exports.create = (req,res,next)=>{
 
 exports.show = (req, res, next)=>{
     let id = req.params.id;
-    if(!id.match(/^[0-9a-fA-F]{24}$/)){
-        let err = new Error("Invalid event id");
-        err.status = 400;
-        return next(err);
-    }
     model.findById(id).populate('author', 'firstName')
     .then(events=>{
         if(events) {
@@ -102,15 +95,7 @@ exports.show = (req, res, next)=>{
 };
 
 exports.edit = (req, res, next)=>{
-    let event = req.body;
     let id = req.params.id;
-    let image = "/images/" + req.body.image;
-    event.image = image;
-    if(!id.match(/^[0-9a-fA-F]{24}$/)){
-        let err = new Error("Invalid event id");
-        err.status = 400;
-        return next(err);
-    }
     model.findById(id)
     .then(event=>{
         if(event) {
@@ -129,11 +114,6 @@ exports.update = (req, res, next)=>{
     let id = req.params.id;
     let image = "/images/" + req.body.image;
     event.image = image;
-    if(!id.match(/^[0-9a-fA-F]{24}$/)){
-        let err = new Error("Invalid event id");
-        err.status = 400;
-        return next(err);
-    }
     model.findByIdAndUpdate(id, event, {useFindAndModify: false})
     .then(event =>{
         if (event) {
@@ -149,11 +129,6 @@ exports.update = (req, res, next)=>{
 
 exports.delete = (req, res, next)=>{
     let id = req.params.id;
-    if(!id.match(/^[0-9a-fA-F]{24}$/)){
-        let err = new Error("Invalid event id");
-        err.status = 400;
-        return next(err);
-    }
     model.findByIdAndDelete(id, {useFindAndModify: false})
     .then(event=>{
         if(event) {

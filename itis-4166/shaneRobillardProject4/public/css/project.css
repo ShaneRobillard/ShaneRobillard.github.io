@@ -170,3 +170,11 @@ input[type=submit] {
     text-align: center;
     padding: 0.5rem 0;
 }
+
+#special {
+    color: black;
+    background-color: white;
+    padding-left: 50px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}

@@ -12,7 +12,7 @@ router.use(function(err, req, res, next) {
     res.render('Error: ',{error:err,message:err.message,url:req.url});
   });
 
-router.get('/', controller.events)
+router.get('/', controller.index)
 
 router.get('/newEvent', isLoggedIn, controller.newEvent);
 

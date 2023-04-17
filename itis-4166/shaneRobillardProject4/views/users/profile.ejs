@@ -5,14 +5,12 @@
         <ul id="events">
             <%if(events.length){%>
                 <%events.forEach(event=>{%>
-                    <!-- <%if(event.author._id === event.author._id){%> -->
-                        <h2><%=event.title%></h2>&nbsp;
+                        <h3><%=event.title%></h3>&nbsp;
                         <form class="editform1">
-                            <input type="image" alt="edit" src="/images/edit.png" formmethod="GET" formaction="/event/<%= events.id%>/edit">
-                            <input type="image" alt="delete" src="/images/delete.png" formmethod="POST" formaction="/event/<%= events.id%>?_method=DELETE">
+                            <button type="submit" formmethod="GET" formaction="/event/<%= event._id%>/edit"><img src="/images/edit.png"></button>
+                            <button type="submit" formmethod="POST" formaction="/event/<%= event._id%>?_method=DELETE"><img src="/images/delete.png"></button>
                         </form><br>
-                    <%}%>
-                <%});%>
+                    <%})%>
             <%}else{%>
                 <p>You have no events to display.</p>
             <%}%>

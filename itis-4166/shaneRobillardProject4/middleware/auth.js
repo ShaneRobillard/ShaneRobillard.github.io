@@ -1,4 +1,4 @@
-const Event = require('../models/user');
+const Event = require('../models/events');
 
 exports.isGuest = (req, res, next)=>{
     if(!req.session.user){
@@ -30,6 +30,10 @@ exports.isAuthor = (req, res, next)=>{
                 err.status = 401;
                 return next(err);
             }
+        } else {
+            let err = new Error('Can not find new event ID' + req.params.id)
+            err.status = 404;
+            return next(err);
         }
     })
     .catch(err=>next(err));

@@ -1,0 +1,90 @@
+<%- include('../partials/header.ejs')%>
+<main>
+    <div class="body">
+        <% for(let i=0; i < categories.length; i++) { %>
+            <h3><%= categories[i].name %></h3><br>
+            <div class="links">
+                <% const categoryEvents = events.filter(event => event.category === categories[i]); %>
+                <% if(categoryEvents.length) { %>
+                    <% categoryEvents.forEach(event => { %>
+                        <p><a id="unique" href="/event/<%= event.id%>" target="_blank">
+                            <%= event.title%> - <%= event.start%>
+                        </a></p>
+                    <% }); %>
+                <%}else{%>
+                    <p>You have no events to display.</p>
+                <%}%>
+            </div>
+        <% } %>
+    </div>
+</main>
+<%- include('../partials/footer.ejs')%>
+
+<!-- <%- include('../partials/header.ejs')%>
+
+    <main>
+        <div class="body">
+            <h1>Events</h1>
+            <hr> -->
+
+            <!-- Check if events is empty -->
+           <!--  <% if (events.length) { %>
+ -->
+                <!-- Loop through each category -->
+                <!-- <% ["Select Category", "Looking For Team Center" , "Esport Watch Party" , "Meet And Greet" , "Coaching"
+                    , "Compete" ].forEach(category=> { %> -->
+
+                    <!-- Check if there are any events in this category -->
+                   <!--  <% const categoryEvents=events.filter(event=> event.category === category); %>
+                        <% if (categoryEvents.length) { %> -->
+
+                            <!-- Print the category title -->
+                            <!-- <% if (category==="Select Category" ) { %>
+                                <h2>Select Category</h2>
+                                <% } else if (category==="Looking For Team Center" ) { %>
+                                    <h2><a href="/category1">
+                                            <%= category %>
+                                        </a></h2>
+                                    <% } else if (category==="Esport Watch Party" ) { %>
+                                        <h2><a href="/category2">
+                                                <%= category %>
+                                            </a></h2>
+                                        <% } else if (category==="Meet And Greet" ) { %>
+                                            <h2><a href="/category3">
+                                                    <%= category %>
+                                            </h2>
+                                            <% } else if (category==="Coaching" ) { %>
+                                                <h2><a href="/category4">
+                                                        <%= category %>
+                                                </h2>
+                                                <% } else if (category==="Compete" ) { %>
+                                                    <h2><a href="/category5">
+                                                            <%= category %>
+                                                    </h2>
+                                                    <% } %> -->
+
+                                                        <!-- Print the event titles for this category -->
+                                                        <!-- <ul>
+                                                            <% categoryEvents.forEach(event=> { %>
+                                                                <li>
+                                                                    <a href="/event/<%= event.id%>">
+                                                                        <%= event.title%> - <%= event.start%>
+                                                                    </a>
+                                                                </li>
+                                                                <% }) %>
+                                                        </ul>
+
+                                                        <% } %>
+
+                                                            <% }) %>
+
+                                                                <% } else { %>
+
+                                                                    <p>There are no events to display</p>
+
+                                                                    <% } %>
+
+        </div>
+    </main>
+
+    <%- include('../partials/footer.ejs') %> -->
