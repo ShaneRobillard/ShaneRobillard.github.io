@@ -50,10 +50,12 @@ mongoose.connect("mongodb+srv://project3:project3@project3.mfqxboe.mongodb.net/n
 .catch(err=>console.log(err.message));
 
 app.use((req, res, next) => {
-    res.locals.user = req.session.user||null;
     res.locals.errorMessages = req.flash('error');
     res.locals.successMessages = req.flash('success');
-    res.locals.author = req.session.user||null;
+    if(req.session){
+        res.locals.user = req.session.user;
+        res.locals.name = req.session.name;
+    }
     next();
 });
 

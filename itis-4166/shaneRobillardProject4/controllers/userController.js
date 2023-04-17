@@ -41,6 +41,7 @@ exports.login = (req, res, next)=>{
             .then(result=>{
                 if(result) {
                     req.session.user = user._id;
+                    req.session.name = user.firstName
                     req.flash('success', 'You have successfully logged in');
                     res.redirect('/users/profile');
                 } 
@@ -69,7 +70,8 @@ exports.logout = (req, res, next)=>{
     req.session.destroy(err=>{
         if(err) 
            return next(err);
-       else
+       else{
             res.redirect('/');  
+       }
     });
 };
