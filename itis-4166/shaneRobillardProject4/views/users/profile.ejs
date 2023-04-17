@@ -8,9 +8,9 @@
                     <!-- <%if(event.author._id === event.author._id){%> -->
                         <h2><%=event.title%></h2>&nbsp;
                         <form class="editform1">
-                            <input type="image" alt="edit" src="/images/edit.png" formmethod="GET" formaction="/event/<%=events.id%>/edit">
-                            <input type="image" alt="delete" src="/images/delete.png" formmethod="POST" formaction="/event/<%=events.id%>?_method=DELETE">
-                        </form>
+                            <input type="image" alt="edit" src="/images/edit.png" formmethod="GET" formaction="/event/<%= events.id%>/edit">
+                            <input type="image" alt="delete" src="/images/delete.png" formmethod="POST" formaction="/event/<%= events.id%>?_method=DELETE">
+                        </form><br>
                     <%}%>
                 <%});%>
             <%}else{%>
