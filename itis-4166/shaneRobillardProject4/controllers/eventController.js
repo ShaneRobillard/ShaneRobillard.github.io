@@ -6,10 +6,6 @@ const {mongoose} = require('mongoose');
 exports.index = (req, res, next) => {
     model.find()
       .then(events => {
-        /* events.forEach(event => {
-          event.startTime = DateTime.fromJSDate(event.startTime).toISO({includeOffset: false, format: 'basic'});
-          event.endTime = DateTime.fromJSDate(event.endTime).toISO({includeOffset: false, format: 'basic'});
-        }); */
         model.distinct('category')
         .then(categories =>{
             res.render('./story/events', {events, categories});
@@ -18,14 +14,6 @@ exports.index = (req, res, next) => {
             console.error(error);
             throw new Error('Error retrieving categories');
         });
-       /*  return getDistinctCategories()
-          .then(categories => {
-            return { events, categories };
-          })
-          .catch(error => {
-            console.error(error);
-            throw new Error('Error retrieving categories');
-          }); */
       })
       .catch(error => {
         console.error(error);

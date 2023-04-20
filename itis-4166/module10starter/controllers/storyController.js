@@ -27,7 +27,7 @@ exports.create = (req, res, next)=>{
 exports.show = (req, res, next)=>{
     let id = req.params.id;
     //an objectId is a 24-bit Hex string
-    model.findById(id).populate('author', 'firstName lastName')
+    model.findById(id).populate('author', 'firstName')
     .then(story=>{
         if(story) { 
             console.log(story)      
