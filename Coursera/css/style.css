@@ -46,4 +46,33 @@ img{
     .grid img{
         border-radius: 50%;
     }
+    .grid figure:last-child{
+        grid-column: span 2;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .grid figure:nth-child(3n){
+        grid-column: span 2;
+    } 
+    .grid img{
+        border-radius: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce){
+    *{
+        animation: none;
+        transition: none;
+    }
+}
+
+@media (prefers-color-scheme: dark){
+    .grid figure{
+        background-color: black;
+        color: yellow;
+    }
+    .grid img{
+        border-color: black;
+    }
 }
