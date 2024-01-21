@@ -68,7 +68,7 @@ img{
 }
 
 @media (prefers-color-scheme: dark){
-    .grid figure{
+    .grid{
         background-color: black;
         color: yellow;
     }
